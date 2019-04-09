@@ -5,9 +5,11 @@ using System.Linq;
 
 public class InputManager : MonoBehaviour
 {
+    private const ushort                    m_movementCount         = 4;
 
     public  PlayerController                player                  = null;
     public  bool                            randomizeInputs         = true;
+
     private ushort                          m_axisCount             = 4;
     private ushort                          m_dualAxisCount         = 2;
     private bool[]                          m_isAxisDown;
@@ -41,7 +43,7 @@ public class InputManager : MonoBehaviour
     InputManager()
     {
         m_isAxisDown            = new bool[m_axisCount];
-        m_isMovementSwapped    = new bool[4];
+        m_isMovementSwapped    = new bool[m_movementCount];
     }
 
     private void UpdateCommands()
@@ -101,6 +103,7 @@ public class InputManager : MonoBehaviour
             {
                 SwapMovement(i);
             }
+            Debug.Log("Movement " + i + " swapped: " + m_isMovementSwapped[i]);
         }
     }
 
@@ -155,7 +158,7 @@ public class InputManager : MonoBehaviour
             }
             default:
             {
-                break;
+                throw new UnassignedReferenceException("Invalid Movement");
             }
         }
         m_isMovementSwapped[p_movement] = !m_isMovementSwapped[p_movement];

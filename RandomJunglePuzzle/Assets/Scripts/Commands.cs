@@ -51,7 +51,6 @@ public class DashBackwardCommand : ICommand
     void ICommand.Execute(PlayerController p_gridMovement)
     {
         p_gridMovement.DashBackward();
-        Debug.Log("Dash Backward");
     }
 }
 
