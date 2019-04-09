@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1385298757}
-  randomizeInputs: 1
+  randomizeInputs: 0
 --- !u!4 &51471677
 Transform:
   m_ObjectHideFlags: 0
