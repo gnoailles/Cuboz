@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private ushort m_dashSize = 2;
+    [SerializeField] private ushort m_dashSize = 2;
 
-    [SerializeField]
-    private bool m_restartAtSpawn;
+    [SerializeField] private bool m_restartAtSpawn;
 
     private Vector3 m_lastSafePosition;
     private Vector3 m_positionBuffer;
@@ -24,7 +22,6 @@ public class PlayerController : MonoBehaviour
             Respawn();
     }
 
-
     public void MoveForward()
     {
         TryMove(Vector3.forward);
@@ -39,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         TryMove(Vector3.right);
     }
+
     public void MoveLeft()
     {
         TryMove(Vector3.left);
@@ -58,6 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         TryMove(Vector3.right * m_dashSize);
     }
+
     public void DashLeft()
     {
         TryMove(Vector3.left * m_dashSize);
@@ -73,14 +72,19 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, p_direction, out hit, p_direction.magnitude))
         {
-            Debug.Log(hit.collider.tag);
-
             switch (hit.collider.tag)
             {
                 case "Wall":
                     if (p_direction.magnitude > 1 && hit.distance > 1)
                         transform.Translate(p_direction.normalized);
                     break;
+                case "Spike":
+                    if (p_direction.magnitude > 1 && hit.distance < 1)
+                        transform.Translate(p_direction.normalized);
+                    else
+                        transform.Translate(p_direction);
+                    break;
+
                 default:
                     break;
             }
