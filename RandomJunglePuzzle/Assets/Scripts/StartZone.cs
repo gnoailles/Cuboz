@@ -1,20 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartZone : MonoBehaviour
 {
-    [SerializeField, Tooltip("In seconds")]
-    private float m_duration = 1;
-
-    [SerializeField, Tooltip("In meters per seconds")]
-    private float m_speed = 1;
+    [SerializeField]
+    private string m_sceneToLoad = "Level1";
 
     [SerializeField]
-    private Transform m_spawnPoint = null;
+    private Transform m_player = null;
 
-    private float m_time = 0;
-    private Vector3 m_startPosition;
+    [SerializeField, Tooltip("In seconds")]
+    private float m_duration = 1.0f;
+
+    [SerializeField, Tooltip("In meters")]
+    private ushort m_xSize = 1;
+
+    [SerializeField, Tooltip("In meters")]
+    private ushort m_zSize = 1;
+
+    private float m_timer = 0.0f;
 
     void Start()
     {
@@ -23,18 +29,21 @@ public class StartZone : MonoBehaviour
 
     void Update()
     {
-        m_time += Time.deltaTime / m_duration;
-        transform.position = Vector3.Lerp(m_startPosition, m_spawnPoint.position, m_time);
+        m_timer += Time.deltaTime;
+
+        if (m_timer >= m_duration)
+            SceneManager.LoadScene(m_sceneToLoad);
     }
 
     [ContextMenu("Initialize")]
     void Initialize()
     {
-        if (m_spawnPoint == null)
-            Debug.Log("Member \"SpawnPoint\" is required.");
-        else
-            transform.position = new Vector3(m_spawnPoint.position.x, m_spawnPoint.position.y + m_duration * m_speed, m_spawnPoint.position.z);
+        transform.localScale = new Vector3(m_xSize, 1.0f, m_zSize);
+        transform.position = new Vector3(m_xSize / 2.0f, 0.0f, m_zSize / 2.0f);
 
-        m_startPosition = transform.position;
+        if (m_player == null)
+            Debug.Log("Member \"Player\" is null");
+        else
+            m_player.position = transform.position + new Vector3(0.0f, 1.0f, 0.0f);
     }
 }
