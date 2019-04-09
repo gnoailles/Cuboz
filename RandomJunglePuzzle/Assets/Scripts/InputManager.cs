@@ -80,6 +80,8 @@ public class InputManager : MonoBehaviour
             m_commands.Add(7,  new DashRightCommand());
             m_commands.Add(8,  new DashLeftCommand());
             m_commands.Add(9,  new DashForwardCommand());
+
+            m_commands.Add(10,  new LightSwitchCommand());
         }
     }
 

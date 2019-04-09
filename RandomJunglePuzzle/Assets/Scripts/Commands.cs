@@ -77,3 +77,16 @@ public class DashRightCommand : ICommand
         Debug.Log("Dash Right");
     }
 }
+
+
+public class LightSwitchCommand : ICommand
+{
+    void ICommand.Execute(PlayerController p_gridMovement)
+    {
+        Light[] lights = GameObject.FindObjectsOfType<Light>();
+        foreach(Light light in lights)
+        {
+            light.enabled = !light.enabled;
+        }
+    }
+}
