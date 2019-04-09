@@ -16,4 +16,9 @@ public class GridMovement : MonoBehaviour
     {
         transform.Translate(1.0f, 0.0f, 0.0f);
     }
+
+    void Respawn()
+    {
+
+    }
 }
