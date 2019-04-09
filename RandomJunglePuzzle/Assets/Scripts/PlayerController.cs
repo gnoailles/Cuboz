@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private ushort m_dashSize = 2;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
     }

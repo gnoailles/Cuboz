@@ -5,17 +5,20 @@ using System.Linq;
 
 public class InputManager : MonoBehaviour
 {
+    private const ushort                    m_movementCount         = 4;
 
-    public  PlayerController                    player          = null;
-    public  bool                            randomizeInputs = true;
-    private ushort                          m_axisCount     = 4;
-    private ushort                          m_dualAxisCount = 2;
+    public  PlayerController                player                  = null;
+    public  bool                            randomizeInputs         = true;
+
+    private ushort                          m_axisCount             = 4;
+    private ushort                          m_dualAxisCount         = 2;
     private bool[]                          m_isAxisDown;
-    private Dictionary<ushort, ICommand>    m_commands      = new Dictionary<ushort, ICommand>();
-    private List<string>                    m_inputs        = new List<string>(new string[] {   "HorizontalDPad", "VerticalDPad",
-                                                                                                "LeftTrigger", "RightTrigger", 
-                                                                                                "A", "B", "X", "Y", 
-                                                                                                "LeftButton", "RightButton" });
+    private bool[]                          m_isMovementSwapped;
+    private Dictionary<ushort, ICommand>    m_commands              = new Dictionary<ushort, ICommand>();
+    private List<string>                    m_inputs                = new List<string>(new string[] {   "HorizontalDPad", "VerticalDPad",
+                                                                                                        "LeftTrigger", "RightTrigger", 
+                                                                                                        "A", "B", "X", "Y", 
+                                                                                                        "LeftButton", "RightButton" });
 
     /// INPUT ID                |       COMMAND ID                          
     /// Axis                    |       Axis
@@ -39,7 +42,8 @@ public class InputManager : MonoBehaviour
 
     InputManager()
     {
-        m_isAxisDown = new bool[m_axisCount];
+        m_isAxisDown            = new bool[m_axisCount];
+        m_isMovementSwapped    = new bool[m_movementCount];
     }
 
     private void UpdateCommands()
@@ -80,6 +84,8 @@ public class InputManager : MonoBehaviour
             m_commands.Add(7,  new DashRightCommand());
             m_commands.Add(8,  new DashLeftCommand());
             m_commands.Add(9,  new DashForwardCommand());
+
+            m_commands.Add(10,  new LightSwitchCommand());
         }
     }
 
@@ -87,7 +93,77 @@ public class InputManager : MonoBehaviour
     {
         UpdateCommands();
     }
-    
+
+    [ContextMenu("Reset Movements")]
+    void ResetMovements()
+    {
+        for(short i = 0; i < m_isMovementSwapped.Length; ++i)
+        { 
+            if (m_isMovementSwapped[i])
+            {
+                SwapMovement(i);
+            }
+            Debug.Log("Movement " + i + " swapped: " + m_isMovementSwapped[i]);
+        }
+    }
+
+    [ContextMenu("Swap Movements")]
+    public void SwapRandomMovement()
+    {
+        short movement = (short)(Random.Range(0, 4));
+        SwapMovement(movement);
+
+        for (short i = 0; i < m_isMovementSwapped.Length; ++i)
+        {
+            Debug.Log("Movement " + i + " swapped: " + m_isMovementSwapped[i]);
+        }
+    }
+
+    void SwapMovement(short p_movement)
+    {
+
+        switch (p_movement)
+        {
+            case 0:
+            { 
+                var forwardPair = m_commands.First(x => x.Value.GetType() == typeof(MoveForwardCommand));
+                var backwardPair = m_commands.First(x => x.Value.GetType() == typeof(MoveBackwardCommand));
+                m_commands[forwardPair.Key] = backwardPair.Value;
+                m_commands[backwardPair.Key] = forwardPair.Value;
+                break;
+            }
+            case 1:
+            { 
+                var forwardPair = m_commands.First(x => x.Value.GetType() == typeof(MoveRightCommand));
+                var backwardPair = m_commands.First(x => x.Value.GetType() == typeof(MoveLeftCommand));
+                m_commands[forwardPair.Key] = backwardPair.Value;
+                m_commands[backwardPair.Key] = forwardPair.Value;
+                break;
+            }
+            case 2:
+            { 
+                var forwardPair = m_commands.First(x => x.Value.GetType() == typeof(DashForwardCommand));
+                var backwardPair = m_commands.First(x => x.Value.GetType() == typeof(DashBackwardCommand));
+                m_commands[forwardPair.Key] = backwardPair.Value;
+                m_commands[backwardPair.Key] = forwardPair.Value;
+                break;
+            }
+            case 3:
+            { 
+                var forwardPair = m_commands.First(x => x.Value.GetType() == typeof(DashRightCommand));
+                var backwardPair = m_commands.First(x => x.Value.GetType() == typeof(DashLeftCommand));
+                m_commands[forwardPair.Key] = backwardPair.Value;
+                m_commands[backwardPair.Key] = forwardPair.Value;
+                break;
+            }
+            default:
+            {
+                throw new UnassignedReferenceException("Invalid Movement");
+            }
+        }
+        m_isMovementSwapped[p_movement] = !m_isMovementSwapped[p_movement];
+    }
+
     void Update()
     {
         for (ushort inputID = 0; inputID < m_inputs.Count; ++inputID)
@@ -98,18 +174,15 @@ public class InputManager : MonoBehaviour
                 float value = Input.GetAxis(m_inputs[inputID]);
                 if(value == 0.0f)
                 {
-                    Debug.Log("Input: " + m_inputs[inputID] + " with index: " + inputID);
                     m_isAxisDown[inputID] = false;
                 }
                 else if(value < 0 && !m_isAxisDown[inputID] && m_commands.ContainsKey(commandID))
                 {
-                    Debug.Log("Input: Negative " + m_inputs[inputID] + " with index: " + inputID);
                     m_commands[commandID].Execute(player);
                     m_isAxisDown[inputID] = true;
                 }
                 else if (value > 0 && !m_isAxisDown[inputID] && m_commands.ContainsKey((ushort)(commandID + m_dualAxisCount)))
                 {
-                    Debug.Log("Input: Positive " + m_inputs[inputID] + " with index: " + inputID);
                     m_commands[(ushort)(commandID + m_dualAxisCount)].Execute(player);
                     m_isAxisDown[inputID] = true;
                 }
@@ -130,7 +203,6 @@ public class InputManager : MonoBehaviour
                     }
                     else if (!m_isAxisDown[inputID] && m_commands.ContainsKey(commandID))
                     {
-                        Debug.Log("Input: " + m_inputs[inputID] + " with index: " + inputID);
                         m_commands[commandID].Execute(player);
                         m_isAxisDown[inputID] = true;
                     }
@@ -139,7 +211,6 @@ public class InputManager : MonoBehaviour
                 {
                     if(Input.GetButtonDown(m_inputs[inputID]) && m_commands.ContainsKey(commandID))
                     {
-                        Debug.Log(m_inputs[inputID] + " pressed!");
                         m_commands[commandID].Execute(player);
                     }
                 }
