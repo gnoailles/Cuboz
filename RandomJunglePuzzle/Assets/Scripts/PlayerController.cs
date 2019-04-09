@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
                     break;
 
                 default:
+                        transform.Translate(p_direction);
                     break;
             }
         }
