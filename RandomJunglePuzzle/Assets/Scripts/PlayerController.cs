@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private ushort m_dashSize = 2;
 
@@ -13,40 +13,64 @@ public class GridMovement : MonoBehaviour
 
     public void MoveForward()
     {
-        transform.Translate(0.0f, 0.0f, 1.0f);
+        if(!HaveCollision(Vector3.forward))
+        {
+            transform.Translate(Vector3.forward);
+        }
     }
 
     public void MoveBackward()
     {
-        transform.Translate(0.0f, 0.0f, -1.0f);
+        if (!HaveCollision(Vector3.back))
+        {
+            transform.Translate(Vector3.back);
+        }
     }
 
     public void MoveRight()
     {
-        transform.Translate(1.0f, 0.0f, 0.0f);
+        if (!HaveCollision(Vector3.right))
+        {
+            transform.Translate(Vector3.right);
+        }
     }
     public void MoveLeft()
     {
-        transform.Translate(-1.0f, 0.0f, 0.0f);
+        if (!HaveCollision(Vector3.left))
+        {
+            transform.Translate(Vector3.left);
+        }
     }
 
     public void DashForward()
     {
-        transform.Translate(0.0f, 0.0f, m_dashSize);
+        if (!HaveCollision(Vector3.forward * m_dashSize))
+        {
+            transform.Translate(Vector3.forward * m_dashSize);
+        }
     }
 
     public void DashBackward()
     {
-        transform.Translate(0.0f, 0.0f, -m_dashSize);
+        if (!HaveCollision(Vector3.back * m_dashSize))
+        {
+            transform.Translate(Vector3.back * m_dashSize);
+        }
     }
 
     public void DashRight()
     {
-        transform.Translate(m_dashSize, 0.0f, 0.0f);
+        if (!HaveCollision(Vector3.right * m_dashSize))
+        {
+            transform.Translate(Vector3.right * m_dashSize);
+        }
     }
     public void DashLeft()
     {
-        transform.Translate(-m_dashSize, 0.0f, 0.0f);
+        if (!HaveCollision(Vector3.left * m_dashSize))
+        {
+            transform.Translate(Vector3.left * m_dashSize);
+        }
     }
 
     public void Respawn()

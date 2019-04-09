@@ -6,7 +6,7 @@ using System.Linq;
 public class InputManager : MonoBehaviour
 {
 
-    public  GridMovement                    player          = null;
+    public  PlayerController                    player          = null;
     public  bool                            randomizeInputs = true;
     private ushort                          m_axisCount     = 4;
     private ushort                          m_dualAxisCount = 2;

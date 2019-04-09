@@ -4,12 +4,12 @@ using UnityEngine;
 
 public interface ICommand
 { 
-    void Execute(GridMovement p_gridMovement);
+    void Execute(PlayerController p_gridMovement);
 }
 
 public class MoveForwardCommand : ICommand
 {
-    void ICommand.Execute(GridMovement p_gridMovement)
+    void ICommand.Execute(PlayerController p_gridMovement)
     {
         p_gridMovement.MoveForward();
         Debug.Log("Move Forward");
@@ -18,7 +18,7 @@ public class MoveForwardCommand : ICommand
 
 public class MoveBackwardCommand : ICommand
 {
-    void ICommand.Execute(GridMovement p_gridMovement)
+    void ICommand.Execute(PlayerController p_gridMovement)
     {
         p_gridMovement.MoveBackward();
         Debug.Log("Move Backward");
@@ -27,7 +27,7 @@ public class MoveBackwardCommand : ICommand
 
 public class MoveLeftCommand : ICommand
 {
-    void ICommand.Execute(GridMovement p_gridMovement)
+    void ICommand.Execute(PlayerController p_gridMovement)
     {
         p_gridMovement.MoveLeft();
         Debug.Log("Move Left");
@@ -36,7 +36,7 @@ public class MoveLeftCommand : ICommand
 
 public class MoveRightCommand : ICommand
 {
-    void ICommand.Execute(GridMovement p_gridMovement)
+    void ICommand.Execute(PlayerController p_gridMovement)
     {
         p_gridMovement.MoveRight();
         Debug.Log("Move Right");
@@ -44,7 +44,7 @@ public class MoveRightCommand : ICommand
 }
 public class DashForwardCommand : ICommand
 {
-    void ICommand.Execute(GridMovement p_gridMovement)
+    void ICommand.Execute(PlayerController p_gridMovement)
     {
         p_gridMovement.DashForward();
         Debug.Log("Dash Forward");
@@ -53,7 +53,7 @@ public class DashForwardCommand : ICommand
 
 public class DashBackwardCommand : ICommand
 {
-    void ICommand.Execute(GridMovement p_gridMovement)
+    void ICommand.Execute(PlayerController p_gridMovement)
     {
         p_gridMovement.DashBackward();
         Debug.Log("Dash Backward");
@@ -62,7 +62,7 @@ public class DashBackwardCommand : ICommand
 
 public class DashLeftCommand : ICommand
 {
-    void ICommand.Execute(GridMovement p_gridMovement)
+    void ICommand.Execute(PlayerController p_gridMovement)
     {
         p_gridMovement.DashLeft();
         Debug.Log("Dash Left");
@@ -71,7 +71,7 @@ public class DashLeftCommand : ICommand
 
 public class DashRightCommand : ICommand
 {
-    void ICommand.Execute(GridMovement p_gridMovement)
+    void ICommand.Execute(PlayerController p_gridMovement)
     {
         p_gridMovement.DashRight();
         Debug.Log("Dash Right");
