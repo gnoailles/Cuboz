@@ -4,80 +4,71 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private ushort m_dashSize = 2;
+    [SerializeField]
+    private ushort m_dashSize = 2;
 
-    // Start is called before the first frame update
+    [SerializeField]
+    private bool m_restartAtSpawn;
+
+    private Vector3 m_lastSafePosition;
+    private Vector3 m_positionBuffer;
+
     void Start()
     {
+        m_lastSafePosition = m_positionBuffer = transform.position;
     }
+
+    void Update()
+    {
+        if (transform.position.y <= -0.1)
+            Respawn();
+    }
+
 
     public void MoveForward()
     {
-        if(!HaveCollision(Vector3.forward))
-        {
-            transform.Translate(Vector3.forward);
-        }
+        TryMove(Vector3.forward);
     }
 
     public void MoveBackward()
     {
-        if (!HaveCollision(Vector3.back))
-        {
-            transform.Translate(Vector3.back);
-        }
+        TryMove(Vector3.back);
     }
 
     public void MoveRight()
     {
-        if (!HaveCollision(Vector3.right))
-        {
-            transform.Translate(Vector3.right);
-        }
+        TryMove(Vector3.right);
     }
     public void MoveLeft()
     {
-        if (!HaveCollision(Vector3.left))
-        {
-            transform.Translate(Vector3.left);
-        }
+        TryMove(Vector3.left);
     }
 
     public void DashForward()
     {
-        if (!HaveCollision(Vector3.forward * m_dashSize))
-        {
-            transform.Translate(Vector3.forward * m_dashSize);
-        }
+        TryMove(Vector3.forward * m_dashSize);
     }
 
     public void DashBackward()
     {
-        if (!HaveCollision(Vector3.back * m_dashSize))
-        {
-            transform.Translate(Vector3.back * m_dashSize);
-        }
+        TryMove(Vector3.back * m_dashSize);
     }
 
     public void DashRight()
     {
-        if (!HaveCollision(Vector3.right * m_dashSize))
-        {
-            transform.Translate(Vector3.right * m_dashSize);
-        }
+        TryMove(Vector3.right * m_dashSize);
     }
     public void DashLeft()
     {
-        if (!HaveCollision(Vector3.left * m_dashSize))
-        {
-            transform.Translate(Vector3.left * m_dashSize);
-        }
+        TryMove(Vector3.left * m_dashSize);
     }
 
     public void Respawn()
     {
+        m_positionBuffer = transform.position = m_lastSafePosition;
     }
 
-    private bool HaveCollision(Vector3 p_direction)
+    private void TryMove(Vector3 p_direction)
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, p_direction, out hit, p_direction.magnitude))
@@ -86,8 +77,9 @@ public class PlayerController : MonoBehaviour
 
             switch (hit.collider.tag)
             {
-                case "Hole":
-//                    return p_direction.magnitude <= 1;
+                case "Wall":
+                    if (p_direction.magnitude > 1 && hit.distance > 1)
+                        transform.Translate(p_direction.normalized);
                     break;
                 default:
                     break;
@@ -95,10 +87,13 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            return false;
+            transform.Translate(p_direction);
         }
 
-
-        return true;
+        if (!m_restartAtSpawn)
+        {
+            m_lastSafePosition = m_positionBuffer;
+            m_positionBuffer = transform.position;
+        }
     }
 }
