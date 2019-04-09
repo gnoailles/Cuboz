@@ -39,7 +39,7 @@ public class StartZone : MonoBehaviour
     void Initialize()
     {
         transform.localScale = new Vector3(m_xSize, 1.0f, m_zSize);
-        transform.position = new Vector3(m_xSize / 2.0f, 0.0f, m_zSize / 2.0f);
+        transform.position = new Vector3(m_xSize / 2.0f, -0.5f, m_zSize / 2.0f);
 
         if (m_player == null)
             Debug.Log("Member \"Player\" is null");
