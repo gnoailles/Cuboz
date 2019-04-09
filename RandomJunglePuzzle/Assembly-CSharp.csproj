@@ -60,8 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Command.cs" />
+    <Compile Include="Assets\Scripts\Commands.cs" />
     <Compile Include="Assets\Scripts\GridMovement.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/lab/ISART/2/GameWeek/RandomJunglePuzzle/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -12,9 +12,13 @@ public class GridMovement : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MoveForward()
     {
-        
+        transform.Translate(1.0f, 0.0f, 0.0f);
+    }
+
+    void Respawn()
+    {
+
     }
 }
