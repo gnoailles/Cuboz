@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StartZone : MonoBehaviour
 {
-    static public string m_sceneToLoad = "Level1";
+    static public string m_sceneToLoad = "TestLevelElements";
+
+    [SerializeField]
+    private InputManager m_inputManager = null;
 
     [SerializeField]
     private Transform m_player = null;
@@ -23,6 +26,7 @@ public class StartZone : MonoBehaviour
 
     void Start()
     {
+        m_inputManager.RandomizeInputs();
         Initialize();
     }
 

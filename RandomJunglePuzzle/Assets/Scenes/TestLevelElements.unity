@@ -779,6 +779,11 @@ PrefabInstance:
       propertyPath: m_nextLevel
       value: TestsController
       objectReference: {fileID: 0}
+    - target: {fileID: 4569194627403914958, guid: 63cefce027c7e2a4e9a827808be3a617,
+        type: 3}
+      propertyPath: m_randomizeInputs
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63cefce027c7e2a4e9a827808be3a617, type: 3}
 --- !u!1001 &4679237983978393684
