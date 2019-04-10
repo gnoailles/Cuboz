@@ -89,6 +89,19 @@ public class PlayerController : MonoBehaviour
                         transform.Translate(p_direction);
                     break;
 
+                    case "Finish":
+                    if(p_direction.magnitude > 1 && hit.distance < 1)
+                    {
+                        transform.Translate(p_direction);
+                    } 
+                    else
+                    { 
+                        if(!LevelManager.Instance.EndPointEntered())
+                        { 
+                            transform.Translate(p_direction);
+                        }
+                    }
+                    break;
                 default:
                         transform.Translate(p_direction);
                     break;
