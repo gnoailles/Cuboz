@@ -12,7 +12,7 @@ public class StartZone : MonoBehaviour
     private Transform m_player = null;
 
     [SerializeField, Tooltip("In seconds")]
-    private float m_duration = 1.0f;
+    private float m_duration = 30.0f;
 
     [SerializeField, Tooltip("In meters")]
     private ushort m_xSize = 1;
