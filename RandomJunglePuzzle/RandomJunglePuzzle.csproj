@@ -633,6 +633,7 @@
     <Compile Include="Assets\Scripts\Level\KillerElement.cs" />
     <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Level\StartZone.cs" />
+    <Compile Include="Assets\Scripts\Level\ValidatingElement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
