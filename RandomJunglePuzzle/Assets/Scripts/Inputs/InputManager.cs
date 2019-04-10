@@ -8,7 +8,6 @@ public class InputManager : MonoBehaviour
     private const ushort                    m_movementCount         = 4;
 
     public  PlayerController                player                  = null;
-    public  bool                            randomizeInputs         = true;
 
     private ushort                          m_axisCount             = 4;
     private ushort                          m_dualAxisCount         = 2;
@@ -46,58 +45,67 @@ public class InputManager : MonoBehaviour
         m_isMovementSwapped    = new bool[m_movementCount];
     }
 
-    private void UpdateCommands()
+    public void RandomizeInputs()
     {
         System.Array.Clear(m_isAxisDown, 0, m_isAxisDown.Length);
-        if (randomizeInputs)
-        { 
-            m_commands.Clear();
-            System.Reflection.Assembly assembly     = typeof(ICommand).Assembly;
-            List<System.Type> types                 = assembly.GetTypes().Where(t => t.GetInterfaces().Contains(typeof(ICommand))).ToList();
-            foreach (System.Type type in types)
-            {
-                ushort commandID = (ushort)Random.Range(0, m_inputs.Count + m_dualAxisCount);
-                while(m_commands.ContainsKey(commandID))
-                {
-                    commandID = (ushort)Random.Range(0, m_inputs.Count + m_dualAxisCount);
-                }
+        m_commands.Clear();
 
-                if (commandID < m_dualAxisCount)
-                {
-                    Debug.Log("Command: " + type.Name + " bound to Input: " + m_inputs[commandID] + " with index: " + commandID);
-                }
-                else
-                {
-                    Debug.Log("Command: " + type.Name + " bound to Input: " + m_inputs[commandID - m_dualAxisCount] + " with index: " + commandID);
-                }
-                m_commands.Add(commandID, (ICommand)System.Activator.CreateInstance(type));
-            }
-        }
-        else
+        System.Reflection.Assembly assembly     = typeof(ICommand).Assembly;
+        List<System.Type> types                 = assembly.GetTypes().Where(t => t.GetInterfaces().Contains(typeof(ICommand))).ToList();
+        foreach (System.Type type in types)
         {
-            m_commands.Add(0,  new MoveLeftCommand());
-            m_commands.Add(1,  new MoveBackwardCommand());
-            m_commands.Add(2,  new MoveRightCommand());
-            m_commands.Add(3,  new MoveForwardCommand());
+            ushort commandID = (ushort)Random.Range(0, m_inputs.Count + m_dualAxisCount);
+            while(m_commands.ContainsKey(commandID))
+            {
+                commandID = (ushort)Random.Range(0, m_inputs.Count + m_dualAxisCount);
+            }
 
-            m_commands.Add(6,  new DashBackwardCommand());
-            m_commands.Add(7,  new DashRightCommand());
-            m_commands.Add(8,  new DashLeftCommand());
-            m_commands.Add(9,  new DashForwardCommand());
-
-            m_commands.Add(10,  new LightSwitchCommand());
+            if (commandID < m_dualAxisCount)
+            {
+                Debug.Log("Command: " + type.Name + " bound to Input: " + m_inputs[commandID] + " with index: " + commandID);
+            }
+            else
+            {
+                Debug.Log("Command: " + type.Name + " bound to Input: " + m_inputs[commandID - m_dualAxisCount] + " with index: " + commandID);
+            }
+            m_commands.Add(commandID, (ICommand)System.Activator.CreateInstance(type));
         }
     }
 
-    void Start()
+    public void SetTestInputs()
     {
-        UpdateCommands();
+        System.Array.Clear(m_isAxisDown, 0, m_isAxisDown.Length);
+        m_commands.Clear();
+
+        m_commands.Add(0, new MoveLeftCommand());
+        m_commands.Add(1, new MoveBackwardCommand());
+        m_commands.Add(2, new MoveRightCommand());
+        m_commands.Add(3, new MoveForwardCommand());
+
+        m_commands.Add(6, new DashBackwardCommand());
+        m_commands.Add(7, new DashRightCommand());
+        m_commands.Add(8, new DashLeftCommand());
+        m_commands.Add(9, new DashForwardCommand());
+
+        m_commands.Add(10, new LightSwitchCommand());
+    }
+
+    void Awake()
+    {
+        InputManager[] objs = FindObjectsOfType<InputManager>();
+
+        if (objs.Length > 1)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     [ContextMenu("Reset Movements")]
     void ResetMovements()
     {
-        for(short i = 0; i < m_isMovementSwapped.Length; ++i)
+        for (short i = 0; i < m_isMovementSwapped.Length; ++i)
         { 
             if (m_isMovementSwapped[i])
             {
