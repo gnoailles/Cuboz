@@ -73,37 +73,59 @@ public class PlayerController : MonoBehaviour
 
     private void TryMove(Vector3 p_direction)
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, p_direction, out hit, p_direction.magnitude))
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, p_direction, p_direction.magnitude);
+        if (hits.Length > 0)
         {
-            switch (hit.collider.tag)
+            if(hits.Length > 1 && hits[0].distance > hits[1].distance)
             {
-                case "Wall":
-                    if (p_direction.magnitude > 1 && hit.distance > 1)
-                        transform.Translate(p_direction.normalized);
-                    break;
-                case "Spike":
-                    if (p_direction.magnitude > 1 && hit.distance < 1)
-                        transform.Translate(p_direction.normalized);
-                    else
-                        transform.Translate(p_direction);
-                    break;
-
-                    case "Finish":
-                    if(p_direction.magnitude > 1 && hit.distance < 1)
-                    {
-                        transform.Translate(p_direction);
-                    } 
-                    else
-                    { 
-                        if(!LevelManager.Instance.EndPointEntered())
-                        { 
+                RaycastHit farHit = hits[0];
+                hits[0] = hits[1];
+                hits[1] = farHit;
+            }
+            bool blocked = false;
+            foreach(RaycastHit hit in hits)
+            {
+                switch (hit.collider.tag)
+                {
+                    case "Wall":
+                        if (p_direction.magnitude > 1 && hit.distance > 1)
+                            transform.Translate(p_direction.normalized);
+                        else
+                            blocked = true;
+                        break;
+                    case "Spike":
+                        if (p_direction.magnitude > 1 && hit.distance < 1)
+                        {
+                            transform.Translate(p_direction.normalized);
+                            blocked = true;
+                        }
+                        else
+                        {
                             transform.Translate(p_direction);
                         }
-                    }
-                    break;
-                default:
-                        transform.Translate(p_direction);
+                        break;
+
+                    case "Finish":
+                        if(p_direction.magnitude > 1 && hit.distance < 1)
+                        {
+                            transform.Translate(p_direction);
+                        } 
+                        else
+                        { 
+                            if(!LevelManager.Instance.EndPointEntered())
+                            { 
+                                transform.Translate(p_direction);
+                            }
+                        }
+                        break;
+                    default:
+                        if(hits.Length == 1 || hit.Equals(hits[1]))
+                        {
+                            transform.Translate(p_direction);
+                        }
+                        break;
+                }
+                if(blocked) 
                     break;
             }
         }
