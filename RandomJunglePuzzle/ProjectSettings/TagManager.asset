@@ -7,7 +7,6 @@ TagManager:
   - Wall
   - Hole
   - Spike
-  - Spawn
   layers:
   - Default
   - TransparentFX
