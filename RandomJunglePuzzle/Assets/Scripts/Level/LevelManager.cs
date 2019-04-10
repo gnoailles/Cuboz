@@ -8,9 +8,14 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField]
     private PlayerController    m_playerController      = null;
+    
+    private InputManager        m_inputManager          = null;
 
     [SerializeField]
     private string              m_nextLevel             = null;
+
+    [SerializeField]
+    private bool                m_randomizeInputs       = true;
 
     [SerializeField] [Tooltip("Number of collectibles needed to finish level")]
     private ushort              m_neededCollectibles    = 0;
@@ -52,6 +57,31 @@ public class LevelManager : MonoBehaviour
         {
             throw new UnassignedReferenceException("Missing player controller reference!");
         }
+
+        m_inputManager = FindObjectOfType<InputManager>();
+        if(m_inputManager == null)
+        {
+            GameObject container = new GameObject("InputManager");
+            m_inputManager = container.AddComponent<InputManager>();
+
+            if (!m_randomizeInputs)
+            {
+                m_inputManager.SetTestInputs();
+            }
+            else
+            {
+                m_inputManager.RandomizeInputs();
+            }
+        }
+        else
+        {
+            if (!m_randomizeInputs)
+            {
+                m_inputManager.SetTestInputs();
+            }
+        }
+        m_inputManager.player = m_playerController;
+
         m_playerController.transform.position = GetSpawnPos();
     }
     
