@@ -393,9 +393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecbc36549433544e90fc1544f696f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_inputManager: {fileID: 960280050}
   m_player: {fileID: 311011281}
-  m_duration: 3
+  m_duration: 10
   m_xSize: 10
   m_zSize: 10
 --- !u!65 &1227478407

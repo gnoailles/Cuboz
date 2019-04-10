@@ -82,22 +82,30 @@ public class PlayerController : MonoBehaviour
                 hits[0] = hits[1];
                 hits[1] = farHit;
             }
+            bool blocked = false;
             foreach(RaycastHit hit in hits)
-            { 
+            {
                 switch (hit.collider.tag)
                 {
                     case "Wall":
                         if (p_direction.magnitude > 1 && hit.distance > 1)
                             transform.Translate(p_direction.normalized);
+                        else
+                            blocked = true;
                         break;
                     case "Spike":
                         if (p_direction.magnitude > 1 && hit.distance < 1)
+                        {
                             transform.Translate(p_direction.normalized);
+                            blocked = true;
+                        }
                         else
+                        {
                             transform.Translate(p_direction);
+                        }
                         break;
 
-                        case "Finish":
+                    case "Finish":
                         if(p_direction.magnitude > 1 && hit.distance < 1)
                         {
                             transform.Translate(p_direction);
@@ -114,10 +122,11 @@ public class PlayerController : MonoBehaviour
                         if(hits.Length == 1 || hit.Equals(hits[1]))
                         {
                             transform.Translate(p_direction);
-
                         }
                         break;
                 }
+                if(blocked) 
+                    break;
             }
         }
         else
