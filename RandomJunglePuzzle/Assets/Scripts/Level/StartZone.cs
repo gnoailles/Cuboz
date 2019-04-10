@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartZone : MonoBehaviour
 {
-    static public string m_sceneToLoad = "Level1";
+    public static string sceneToLoad = "Level1";
 
     [SerializeField]
     private Transform m_player = null;
@@ -31,7 +31,7 @@ public class StartZone : MonoBehaviour
         m_timer += Time.deltaTime;
 
         if (m_timer >= m_duration)
-            SceneManager.LoadScene(m_sceneToLoad);
+            SceneManager.LoadScene(sceneToLoad);
     }
 
     [ContextMenu("Initialize")]

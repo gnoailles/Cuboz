@@ -60,14 +60,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Inputs\Commands.cs" />
+    <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
+    <Compile Include="Assets\Scripts\Level\KillerElement.cs" />
     <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Level\StartZone.cs" />
     <Compile Include="Assets\Scripts\Level\ValidatingElement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\QuitOnClick.cs" />
-    <Compile Include="Assets\Scripts\Level\StartZone.cs" />
-    <Compile Include="Assets\Scripts\Level\KillerElement.cs" />
-    <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
-    <Compile Include="Assets\Scripts\Inputs\Commands.cs" />
+    <Compile Include="Assets\Scripts\UI\SceneLoader.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/c.jeauc/Documents/Prog/Exercices/GameWeek2019/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

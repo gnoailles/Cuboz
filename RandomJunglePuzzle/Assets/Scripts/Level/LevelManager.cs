@@ -91,7 +91,7 @@ public class LevelManager : MonoBehaviour
     {
         if(m_validatedElementsCount >= m_neededCollectibles)
         {
-            StartZone.m_sceneToLoad = m_nextLevel;
+            StartZone.sceneToLoad = m_nextLevel;
             SceneManager.LoadScene("StartZone");
             return true;
         }
