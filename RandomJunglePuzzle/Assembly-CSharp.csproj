@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\QuitOnClick.cs" />
     <Compile Include="Assets\Scripts\UI\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\UI\SelectOnInput.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/c.jeauc/Documents/Prog/Exercices/GameWeek2019/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
