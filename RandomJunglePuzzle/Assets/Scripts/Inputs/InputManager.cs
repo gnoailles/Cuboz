@@ -176,6 +176,10 @@ public class InputManager : MonoBehaviour
     {
         for (ushort inputID = 0; inputID < m_inputs.Count; ++inputID)
         {
+            if(player == null)
+            {
+                player = FindObjectOfType<PlayerController>();
+            }
             ushort commandID = inputID;
             if (inputID < m_dualAxisCount)
             {
