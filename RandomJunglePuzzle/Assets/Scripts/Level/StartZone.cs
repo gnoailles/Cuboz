@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartZone : MonoBehaviour
 {
-    static public string m_sceneToLoad = "TestLevelElements";
+    static public string sceneToLoad = "TestLevelElements";
     
     private InputManager m_inputManager = null;
 

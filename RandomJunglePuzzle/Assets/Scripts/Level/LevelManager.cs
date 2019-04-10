@@ -23,6 +23,9 @@ public class LevelManager : MonoBehaviour
     private GameObject[]        m_spawnPoints;
     private ushort              m_validatedElementsCount = 0;
 
+    private float m_timer = 0.0f;
+    public bool m_isPaused = false;
+
     private static LevelManager m_instance;
     public  static LevelManager Instance
     {
@@ -84,7 +87,14 @@ public class LevelManager : MonoBehaviour
 
         m_playerController.transform.position = GetSpawnPos();
     }
-    
+
+    void Update()
+    {
+        m_isPaused = Input.GetButton("Pause");
+
+        if (!m_isPaused)
+            m_timer += Time.deltaTime;
+    }
 
     [ContextMenu("Update SpawnPoints")]
     void UpdateSpawnPoints()
