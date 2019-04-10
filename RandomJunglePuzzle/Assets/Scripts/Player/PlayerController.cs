@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private ushort m_dashSize = 2;
+    [SerializeField] private ushort m_dashSize          = 2;
 
-    [SerializeField] private bool m_restartAtSpawn;
+    [SerializeField] private bool   m_restartAtSpawn    = false;
 
     private Vector3 m_lastSafePosition;
     private Vector3 m_positionBuffer;
@@ -64,6 +64,10 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn()
     {
+        if(m_restartAtSpawn)
+        {
+            m_lastSafePosition = LevelManager.Instance.GetSpawnPos();
+        }
         m_positionBuffer = transform.position = m_lastSafePosition;
     }
 
