@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StartZone : MonoBehaviour
 {
-    [SerializeField]
-    private string m_sceneToLoad = "Level1";
+    static public string m_sceneToLoad = "Level1";
 
     [SerializeField]
     private Transform m_player = null;
 
     [SerializeField, Tooltip("In seconds")]
-    private float m_duration = 1.0f;
+    private float m_duration = 30.0f;
 
     [SerializeField, Tooltip("In meters")]
     private ushort m_xSize = 1;

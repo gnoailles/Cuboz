@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private ushort m_dashSize = 2;
+    [SerializeField] private ushort m_dashSize          = 2;
 
-    [SerializeField] private bool m_restartAtSpawn;
+    [SerializeField] private bool   m_restartAtSpawn    = false;
 
     private Vector3 m_lastSafePosition;
     private Vector3 m_positionBuffer;
@@ -64,6 +64,10 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn()
     {
+        if(m_restartAtSpawn)
+        {
+            m_lastSafePosition = LevelManager.Instance.GetSpawnPos();
+        }
         m_positionBuffer = transform.position = m_lastSafePosition;
     }
 
@@ -85,6 +89,19 @@ public class PlayerController : MonoBehaviour
                         transform.Translate(p_direction);
                     break;
 
+                    case "Finish":
+                    if(p_direction.magnitude > 1 && hit.distance < 1)
+                    {
+                        transform.Translate(p_direction);
+                    } 
+                    else
+                    { 
+                        if(!LevelManager.Instance.EndPointEntered())
+                        { 
+                            transform.Translate(p_direction);
+                        }
+                    }
+                    break;
                 default:
                         transform.Translate(p_direction);
                     break;
