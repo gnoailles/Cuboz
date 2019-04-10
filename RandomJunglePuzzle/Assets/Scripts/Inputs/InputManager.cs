@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
 
     public  PlayerController                player                  = null;
 
+
+    private float                           m_lastInputTime        = 0.0f;
     private ushort                          m_axisCount             = 4;
     private ushort                          m_dualAxisCount         = 2;
     private bool[]                          m_isAxisDown;
@@ -129,7 +131,6 @@ public class InputManager : MonoBehaviour
 
     void SwapMovement(short p_movement)
     {
-
         switch (p_movement)
         {
             case 0:
@@ -174,63 +175,75 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        for (ushort inputID = 0; inputID < m_inputs.Count; ++inputID)
+        if (Time.time - m_lastInputTime > player.inputCooldown)
         {
-            if(player == null)
+            for (ushort inputID = 0; inputID < m_inputs.Count; ++inputID)
             {
-                player = FindObjectOfType<PlayerController>();
-            }
-            ushort commandID = inputID;
-            if (inputID < m_dualAxisCount)
-            {
-                float value = Input.GetAxis(m_inputs[inputID]);
-                if(value == 0.0f)
+                if(player == null)
                 {
-                    m_isAxisDown[inputID] = false;
+                    player = FindObjectOfType<PlayerController>();
                 }
-                else if(value < 0 && !m_isAxisDown[inputID] && m_commands.ContainsKey(commandID))
-                {
-                    m_commands[commandID].Execute(player);
-                    m_isAxisDown[inputID] = true;
-                }
-                else if (value > 0 && !m_isAxisDown[inputID] && m_commands.ContainsKey((ushort)(commandID + m_dualAxisCount)))
-                {
-                    m_commands[(ushort)(commandID + m_dualAxisCount)].Execute(player);
-                    m_isAxisDown[inputID] = true;
-                }
-            }
-            else
-            {
-                commandID += m_dualAxisCount;
-                if (inputID >= m_dualAxisCount && inputID < m_axisCount)
+                ushort commandID = inputID;
+                if (inputID < m_dualAxisCount)
                 {
                     float value = Input.GetAxis(m_inputs[inputID]);
-                    if (value < 0.0f)
-                    {
-                        throw new System.Exception("Dual axis not handled");
-                    }
-                    if (value == 0.0f)
+                    if(value == 0.0f)
                     {
                         m_isAxisDown[inputID] = false;
                     }
-                    else if (!m_isAxisDown[inputID] && m_commands.ContainsKey(commandID))
+                    else if(value < 0 && !m_isAxisDown[inputID] && m_commands.ContainsKey(commandID))
                     {
                         m_commands[commandID].Execute(player);
+                        m_lastInputTime = Time.time;
                         m_isAxisDown[inputID] = true;
+                        return;
                     }
-                }
-                else if (inputID >= m_axisCount && inputID < m_inputs.Count)
-                {
-                    if(Input.GetButtonDown(m_inputs[inputID]) && m_commands.ContainsKey(commandID))
+                    else if (value > 0 && !m_isAxisDown[inputID] && m_commands.ContainsKey((ushort)(commandID + m_dualAxisCount)))
                     {
-                        m_commands[commandID].Execute(player);
+                        m_commands[(ushort)(commandID + m_dualAxisCount)].Execute(player);
+                        m_lastInputTime = Time.time;
+                        m_isAxisDown[inputID] = true;
+                        return;
                     }
                 }
                 else
                 {
-                    throw new System.IndexOutOfRangeException("Unhandled input");
+                    commandID += m_dualAxisCount;
+                    if (inputID >= m_dualAxisCount && inputID < m_axisCount)
+                    {
+                        float value = Input.GetAxis(m_inputs[inputID]);
+                        if (value < 0.0f)
+                        {
+                            throw new System.Exception("Dual axis not handled");
+                        }
+                        if (value == 0.0f)
+                        {
+                            m_isAxisDown[inputID] = false;
+                        }
+                        else if (!m_isAxisDown[inputID] && m_commands.ContainsKey(commandID))
+                        {
+                            m_commands[commandID].Execute(player);
+                            m_lastInputTime = Time.time;
+                            m_isAxisDown[inputID] = true;
+                            return;
+                        }
+                    }
+                    else if (inputID >= m_axisCount && inputID < m_inputs.Count)
+                    {
+                        if(Input.GetButtonDown(m_inputs[inputID]) && m_commands.ContainsKey(commandID))
+                        {
+                            m_commands[commandID].Execute(player);
+                            m_lastInputTime = Time.time;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        throw new System.IndexOutOfRangeException("Unhandled input");
+                    }
                 }
             }
         }
     }
+
 }

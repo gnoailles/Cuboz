@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public  float                   inputCooldown       = 0.1f;
     [SerializeField] private ushort m_dashSize          = 2;
 
     [SerializeField] private bool   m_restartAtSpawn    = false;
