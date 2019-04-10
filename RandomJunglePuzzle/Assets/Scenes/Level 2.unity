@@ -932,6 +932,11 @@ PrefabInstance:
       propertyPath: m_playerController
       value: 
       objectReference: {fileID: 1903325161}
+    - target: {fileID: 4569194627403914958, guid: 63cefce027c7e2a4e9a827808be3a617,
+        type: 3}
+      propertyPath: m_nextLevel
+      value: Level 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63cefce027c7e2a4e9a827808be3a617, type: 3}
 --- !u!1001 &658901390
@@ -1264,7 +1269,7 @@ GameObject:
   - component: {fileID: 1176937752}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
