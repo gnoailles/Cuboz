@@ -9,6 +9,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private PlayerController    m_playerController      = null;
 
+    [SerializeField]
+    private string              m_nextLevel             = null;
+
     [SerializeField] [Tooltip("Number of collectibles needed to finish level")]
     private ushort              m_neededCollectibles    = 0;
 
@@ -40,6 +43,10 @@ public class LevelManager : MonoBehaviour
         if(m_spawnPoints == null)
         {
             throw new UnassignedReferenceException("Missing spawn points!");
+        }
+        if(m_nextLevel.Length <= 0)
+        {
+            throw new UnassignedReferenceException("Missing next level name!");
         }
         if(m_playerController == null)
         {
@@ -80,11 +87,14 @@ public class LevelManager : MonoBehaviour
         ++m_validatedElementsCount;
     }
 
-    public void EndPointEntered()
+    public bool EndPointEntered()
     {
         if(m_validatedElementsCount >= m_neededCollectibles)
         {
+            StartZone.m_sceneToLoad = m_nextLevel;
             SceneManager.LoadScene("StartZone");
+            return true;
         }
+        return false;
     }
 }

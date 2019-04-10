@@ -96,7 +96,10 @@ public class PlayerController : MonoBehaviour
                     } 
                     else
                     { 
-                        LevelManager.Instance.EndPointEntered();
+                        if(!LevelManager.Instance.EndPointEntered())
+                        { 
+                            transform.Translate(p_direction);
+                        }
                     }
                     break;
                 default:
