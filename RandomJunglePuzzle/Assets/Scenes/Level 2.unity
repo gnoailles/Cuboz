@@ -932,6 +932,11 @@ PrefabInstance:
       propertyPath: m_nextLevel
       value: Level 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4569194627403914958, guid: 63cefce027c7e2a4e9a827808be3a617,
+        type: 3}
+      propertyPath: m_nextStartZoneTimer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4569194627403914959, guid: 63cefce027c7e2a4e9a827808be3a617,
         type: 3}
       propertyPath: player
