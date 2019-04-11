@@ -41,11 +41,6 @@ public class LevelManager : MonoBehaviour
             if (m_instance == null)
             {
                 m_instance = GameObject.FindObjectOfType<LevelManager>();
-
-                if (m_instance == null)
-                {
-                    Debug.Log("A LevelManager is required for every game level!");
-                }
             }
 
             return m_instance;

@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
     public  PlayerController                player                  = null;
 
 
-    private float                           m_lastInputTime        = 0.0f;
+    private float                           m_lastInputTime         = 0.0f;
     private ushort                          m_axisCount             = 4;
     private ushort                          m_dualAxisCount         = 2;
     private bool[]                          m_isAxisDown;
