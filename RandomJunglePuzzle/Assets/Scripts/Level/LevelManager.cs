@@ -10,9 +10,11 @@ public class LevelManager : MonoBehaviour
     private PlayerController    m_playerController      = null;
     
     private InputManager        m_inputManager          = null;
-
+    
     [SerializeField]
     private string              m_nextLevel             = null;
+    [SerializeField]
+    private float               m_nextStartZoneTimer    = 20.0f;
 
     [SerializeField]
     private bool                m_randomizeInputs       = true;
@@ -122,6 +124,7 @@ public class LevelManager : MonoBehaviour
         if(m_validatedElementsCount >= m_neededCollectibles)
         {
             StartZone.m_sceneToLoad = m_nextLevel;
+            StartZone.duration      = m_nextStartZoneTimer;
             SceneManager.LoadScene("StartZone");
             return true;
         }
