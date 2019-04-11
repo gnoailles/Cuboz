@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartZone : MonoBehaviour
 {
-    static public string    m_sceneToLoad   = "TestLevelElements";
+    static public string sceneToLoad = "TestLevelElements";
     static public float     duration        = 30.0f;
     
     private InputManager m_inputManager = null;
@@ -36,10 +36,11 @@ public class StartZone : MonoBehaviour
 
     void Update()
     {
-        m_timer += Time.deltaTime;
+        if (!m_inputManager.isPaused)
+            m_timer += Time.deltaTime;
 
         if (m_timer >= duration)
-            SceneManager.LoadScene(m_sceneToLoad);
+            SceneManager.LoadScene(sceneToLoad);
     }
 
     [ContextMenu("Initialize")]

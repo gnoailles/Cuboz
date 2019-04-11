@@ -1398,7 +1398,7 @@ PrefabInstance:
     - target: {fileID: 4569194627403914958, guid: 63cefce027c7e2a4e9a827808be3a617,
         type: 3}
       propertyPath: m_randomizeInputs
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63cefce027c7e2a4e9a827808be3a617, type: 3}
@@ -1562,6 +1562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd0797304695a340898cabde219a6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputCooldown: 0.1
   m_dashSize: 2
   m_restartAtSpawn: 0
 --- !u!54 &1385298758

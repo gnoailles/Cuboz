@@ -19,7 +19,11 @@ public class ValidatingElement : MonoBehaviour
     private void Validate()
     {
         m_validated = true;
-        GetComponent<MeshRenderer>().material.color = Color.green;
-        LevelManager.Instance.ValidateElement();
+        LevelManager.Instance.ValidateElement(this);
+    }
+
+    public void Reset()
+    {
+        m_validated = false;
     }
 }
