@@ -1600,11 +1600,16 @@ PrefabInstance:
     - target: {fileID: 4569194627403914958, guid: 63cefce027c7e2a4e9a827808be3a617,
         type: 3}
       propertyPath: m_randomizeInputs
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4569194627403914958, guid: 63cefce027c7e2a4e9a827808be3a617,
         type: 3}
       propertyPath: m_neededCollectibles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569194627403914958, guid: 63cefce027c7e2a4e9a827808be3a617,
+        type: 3}
+      propertyPath: m_neededValidatingElements
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1723,7 +1728,7 @@ GameObject:
   - component: {fileID: 1298351086}
   m_Layer: 0
   m_Name: spawn
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
