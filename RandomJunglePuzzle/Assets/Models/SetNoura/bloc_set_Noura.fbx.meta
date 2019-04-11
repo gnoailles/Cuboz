@@ -36,7 +36,12 @@ ModelImporter:
     4300006: bloc_edge_right
     4300008: bloc_ground_terre
     4300010: bloc_ground_pierre
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 800b7444298393741bfb1610128944ee, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
