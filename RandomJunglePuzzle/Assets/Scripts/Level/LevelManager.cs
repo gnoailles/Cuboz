@@ -91,6 +91,12 @@ public class LevelManager : MonoBehaviour
         m_inputManager.player = m_playerController;
 
         m_playerController.transform.position = GetSpawnPos();
+
+        PlayerHUD playerHud = FindObjectOfType<PlayerHUD>();
+        if (playerHud == null)
+        {
+            Instantiate(Resources.Load("HUD"));
+        }
     }
 
     void Update()
@@ -144,6 +150,11 @@ public class LevelManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void SetPaused(bool p_status)
+    {
+        m_isPaused = p_status;
     }
 
     void OnDestroy()
