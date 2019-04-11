@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 public class StartZone : MonoBehaviour
 {
     static public string sceneToLoad = "TestLevelElements";
+    static public float     duration        = 30.0f;
     
     private InputManager m_inputManager = null;
 
     [SerializeField]
     private Transform m_player = null;
 
-    [SerializeField, Tooltip("In seconds")]
-    private float m_duration = 30.0f;
 
     [SerializeField, Tooltip("In meters")]
     private ushort m_xSize = 1;
@@ -39,7 +38,7 @@ public class StartZone : MonoBehaviour
     {
         m_timer += Time.deltaTime;
 
-        if (m_timer >= m_duration)
+        if (m_timer >= duration)
             SceneManager.LoadScene(sceneToLoad);
     }
 
