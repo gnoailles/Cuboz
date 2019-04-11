@@ -908,7 +908,7 @@ GameObject:
   - component: {fileID: 366408977}
   m_Layer: 0
   m_Name: End
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2084,16 +2084,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4569194627403914959, guid: 63cefce027c7e2a4e9a827808be3a617,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1806927600}
-    - target: {fileID: 4569194627403914959, guid: 63cefce027c7e2a4e9a827808be3a617,
-        type: 3}
-      propertyPath: randomizeInputs
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4569194627403914958, guid: 63cefce027c7e2a4e9a827808be3a617,
         type: 3}
       propertyPath: m_playerController
@@ -2108,6 +2098,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_randomizeInputs
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569194627403914959, guid: 63cefce027c7e2a4e9a827808be3a617,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1806927600}
+    - target: {fileID: 4569194627403914959, guid: 63cefce027c7e2a4e9a827808be3a617,
+        type: 3}
+      propertyPath: randomizeInputs
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63cefce027c7e2a4e9a827808be3a617, type: 3}
@@ -2289,11 +2289,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8522763976497463108, guid: 8e5dc092f9fcdc642aaa88c8f6c21cfc,
-        type: 3}
-      propertyPath: m_restartAtSpawn
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8522763976497463113, guid: 8e5dc092f9fcdc642aaa88c8f6c21cfc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2348,6 +2343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8522763976497463108, guid: 8e5dc092f9fcdc642aaa88c8f6c21cfc,
+        type: 3}
+      propertyPath: m_restartAtSpawn
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e5dc092f9fcdc642aaa88c8f6c21cfc, type: 3}
