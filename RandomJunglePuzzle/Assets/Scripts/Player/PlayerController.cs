@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector3                 m_translation;
     private bool                    m_moveNextFrame     = false;
     private bool                    m_isOnFinish        = false;
+    private bool                    m_isFalling        = false;
 
     void Start()
     {
@@ -40,7 +41,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += m_translation;
             m_moveNextFrame = false;
-            inputCooldown = 0;
+            if(!m_isFalling)
+                inputCooldown = 0;
         }
     }
 
@@ -201,8 +203,9 @@ public class PlayerController : MonoBehaviour
                             if (hits.Length > 1 && hits[1].collider.tag == "Wall")
                             {
                                 m_animator.Play("DashBFall");
-                                inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
+                                inputCooldown = 5.0f;
                                 m_translation = p_direction.normalized;
+                                m_isFalling = true;
                                 blocked = true;
                             }
                             else
@@ -221,14 +224,16 @@ public class PlayerController : MonoBehaviour
                             if (p_direction.magnitude > 1)
                             {
                                 m_animator.Play("DashAFall");
-                                inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
+                                inputCooldown = 5.0f;
                                 m_translation = p_direction;
+                                m_isFalling = true;
                             }
                             else
                             {
                                 m_animator.Play("MoveFall");
-                                inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
+                                inputCooldown = 5.0f;
                                 m_translation = p_direction.normalized;
+                                m_isFalling = true;
                             }
                             blocked = true;
                         }
@@ -348,8 +353,9 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator DelayedRespawn()
     {
-       
+        inputCooldown += 0.5f;
         yield return new WaitForSeconds(0.5f);
+        m_isFalling = false;
         if (m_restartAtSpawn)
         {
             m_lastSafePosition = LevelManager.Instance.GetSpawnPos();
