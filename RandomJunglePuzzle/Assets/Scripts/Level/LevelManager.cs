@@ -25,6 +25,14 @@ public class LevelManager : MonoBehaviour
     private GameObject[]            m_spawnPoints;
     private List<ValidatingElement> m_validatedElements = new List<ValidatingElement>();
 
+    private float m_levelTimer = 0.0f;
+    public float LevelTimer => m_levelTimer;
+    private bool m_isPaused = false;
+    public bool IsPaused => m_isPaused;
+
+    private static float m_totalTime;
+    public float TotalTime => m_totalTime;
+
     private static LevelManager m_instance;
     public  static LevelManager Instance
     {
@@ -85,8 +93,24 @@ public class LevelManager : MonoBehaviour
         m_inputManager.player = m_playerController;
 
         m_playerController.transform.position = GetSpawnPos();
+
+        PlayerHUD playerHud = FindObjectOfType<PlayerHUD>();
+        if (playerHud == null)
+        {
+            Instantiate(Resources.Load("HUD"));
+        }
     }
-    
+
+    void Update()
+    {
+        if (Input.GetButton("Pause"))
+        {
+            m_isPaused = !m_isPaused;
+        }
+
+        if (!m_isPaused)
+            m_levelTimer += Time.deltaTime;
+    }
 
     [ContextMenu("Update SpawnPoints")]
     void UpdateSpawnPoints()
@@ -132,11 +156,21 @@ public class LevelManager : MonoBehaviour
     {
         if(m_validatedElements.Count >= m_neededValidatingElements)
         {
-            StartZone.m_sceneToLoad = m_nextLevel;
+            StartZone.sceneToLoad = m_nextLevel;
             StartZone.duration      = m_nextStartZoneTimer;
             SceneManager.LoadScene("StartZone");
             return true;
         }
         return false;
+    }
+
+    public void SetPaused(bool p_status)
+    {
+        m_isPaused = p_status;
+    }
+
+    void OnDestroy()
+    {
+        m_totalTime += m_levelTimer;
     }
 }
