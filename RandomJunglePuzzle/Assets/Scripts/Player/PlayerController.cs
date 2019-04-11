@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public  float                   inputCooldown       = 0.1f;
     [SerializeField] private ushort m_dashSize          = 2;
 
     [SerializeField] private bool   m_restartAtSpawn    = false;
@@ -89,7 +90,9 @@ public class PlayerController : MonoBehaviour
                 {
                     case "Wall":
                         if (p_direction.magnitude > 1 && hit.distance > 1)
-                            transform.Translate(p_direction.normalized);
+                        {
+                                transform.Translate(p_direction.normalized);
+                        }
                         else
                             blocked = true;
                         break;
@@ -108,13 +111,23 @@ public class PlayerController : MonoBehaviour
                     case "Finish":
                         if(p_direction.magnitude > 1 && hit.distance < 1)
                         {
-                            transform.Translate(p_direction);
+                            if(hits.Length > 1 && hits[1].collider.tag == "Wall")
+                            {
+                                transform.Translate(p_direction.normalized);
+                                LevelManager.Instance.EndPointEntered();
+                                blocked = true;
+                            }
+                            else
+                            {
+                                transform.Translate(p_direction);
+                            }
                         } 
                         else
                         { 
                             if(!LevelManager.Instance.EndPointEntered())
                             { 
                                 transform.Translate(p_direction);
+                                blocked = true;
                             }
                         }
                         break;
