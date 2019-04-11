@@ -98,7 +98,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Pause"))
+        if (Input.GetButtonDown("Pause"))   
         {
             m_isPaused = !m_isPaused;
         }

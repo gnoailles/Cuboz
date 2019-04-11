@@ -175,7 +175,7 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Time.time - m_lastInputTime > player.inputCooldown)
+        if (Time.time - m_lastInputTime > player.inputCooldown && (LevelManager.Instance ? !LevelManager.Instance.IsPaused : true) )
         {
             for (ushort inputID = 0; inputID < m_inputs.Count; ++inputID)
             {

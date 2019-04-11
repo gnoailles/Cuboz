@@ -22,15 +22,17 @@ public class PlayerHUD : MonoBehaviour
 
     void Update()
     {
+        m_timerText.gameObject.SetActive(LevelManager.Instance);
+
         if(LevelManager.Instance)
         { 
-            m_timerText.text = LevelManager.Instance.LevelTimer.ToString();
+            m_timerText.text = LevelManager.Instance.LevelTimer.ToString("F2");
             m_pauseMenu.SetActive(LevelManager.Instance.IsPaused);
         }
         else
         {
-            if (Input.GetButton("Pause"))
-                m_pauseMenu.SetActive(true);
+            if (Input.GetButtonDown("Pause"))
+                m_pauseMenu.SetActive(!m_pauseMenu.activeSelf);
         }
     }
 }
