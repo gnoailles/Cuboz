@@ -9,7 +9,8 @@ public class KillerElement : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerController>().Respawn();
+            Debug.Log(tag);
+            other.GetComponent<PlayerController>().Respawn((tag == "Spike"));
         }
     }
 
