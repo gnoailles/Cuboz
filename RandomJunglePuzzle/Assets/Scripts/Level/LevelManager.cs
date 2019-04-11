@@ -161,16 +161,21 @@ public class LevelManager : MonoBehaviour
         m_validatedElements.Clear();
     }
 
-    public bool EndPointEntered()
+    public bool LevelComplete()
     {
         if(m_validatedElements.Count >= m_neededValidatingElements)
         {
-            StartZone.sceneToLoad = m_nextLevel;
-            StartZone.duration      = m_nextStartZoneTimer;
-            SceneManager.LoadScene("StartZone");
+
             return true;
         }
         return false;
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene("StartZone");
+        StartZone.sceneToLoad = m_nextLevel;
+        StartZone.duration = m_nextStartZoneTimer;
     }
 
     public void SetPaused(bool p_status)

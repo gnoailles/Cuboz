@@ -1,0 +1,131 @@
+fileFormatVersion: 2
+guid: 12a7788f7a5f4884f87a715f2f6544a6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bloc_BrokenPillar1
+    100002: Bloc_BrokenPillar2
+    100004: Bloc_Pillar
+    100006: Bloc_Pyke
+    100008: //RootNode
+    100010: BlocGrp_Button
+    100012: BlocGrp_Button_GEO_bloc
+    100014: GEO_button
+    400000: Bloc_BrokenPillar1
+    400002: Bloc_BrokenPillar2
+    400004: Bloc_Pillar
+    400006: Bloc_Pyke
+    400008: //RootNode
+    400010: BlocGrp_Button
+    400012: BlocGrp_Button_GEO_bloc
+    400014: GEO_button
+    2100000: lambert1
+    2300000: Bloc_BrokenPillar1
+    2300002: Bloc_BrokenPillar2
+    2300004: Bloc_Pillar
+    2300006: Bloc_Pyke
+    2300008: BlocGrp_Button_GEO_bloc
+    2300010: GEO_button
+    3300000: Bloc_BrokenPillar1
+    3300002: Bloc_BrokenPillar2
+    3300004: Bloc_Pillar
+    3300006: Bloc_Pyke
+    3300008: BlocGrp_Button_GEO_bloc
+    3300010: GEO_button
+    4300000: GEO_button
+    4300002: BlocGrp_Button_GEO_bloc
+    4300004: Bloc_Pillar
+    4300006: Bloc_BrokenPillar1
+    4300008: Bloc_BrokenPillar2
+    4300010: Bloc_Pyke
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 9b620e4823111cc4f96cd6655769a431, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
