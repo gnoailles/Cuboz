@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour
     InputManager()
     {
         m_isAxisDown            = new bool[m_axisCount];
-        m_isMovementSwapped    = new bool[m_movementCount];
+        m_isMovementSwapped     = new bool[m_movementCount];
     }
 
     public void RandomizeInputs()
@@ -129,7 +129,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    void SwapMovement(short p_movement)
+    public void SwapMovement(short p_movement)
     {
         switch (p_movement)
         {
