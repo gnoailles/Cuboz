@@ -36,7 +36,8 @@ public class StartZone : MonoBehaviour
 
     void Update()
     {
-        m_timer += Time.deltaTime;
+        if (!m_inputManager.isPaused)
+            m_timer += Time.deltaTime;
 
         if (m_timer >= duration)
             SceneManager.LoadScene(sceneToLoad);

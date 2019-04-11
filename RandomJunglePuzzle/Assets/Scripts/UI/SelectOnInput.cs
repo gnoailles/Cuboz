@@ -10,7 +10,7 @@ public class SelectOnInput : MonoBehaviour
     [SerializeField] private GameObject m_selectedObject;
     [SerializeField] private Button m_backButton;
 
-    private bool m_buttonSelected;
+    private bool m_buttonSelected = false;
 
     // Use this for initialization
     void Start()
@@ -21,13 +21,13 @@ public class SelectOnInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_buttonSelected && Input.GetAxisRaw("VerticalDPad") != 0)
+        if (!m_buttonSelected && (Input.GetAxisRaw("VerticalDPad") != 0 || Input.GetAxisRaw("HorizontalDPad") != 0))
         {
             m_eventSystem.SetSelectedGameObject(m_selectedObject);
             m_buttonSelected = true;
         }
 
-        if (m_backButton != null && Input.GetButton("B"))
+        if (m_backButton != null && Input.GetButtonDown("B"))
             m_backButton.onClick.Invoke();
     }
 

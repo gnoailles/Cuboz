@@ -29,6 +29,8 @@ public class LevelManager : MonoBehaviour
     public float LevelTimer => m_levelTimer;
     private bool m_isPaused = false;
     public bool IsPaused => m_isPaused;
+    private bool m_shouldUnpause = false;
+    private float m_unpauseTimer = 0.0f;
 
     private static float m_totalTime;
     public float TotalTime => m_totalTime;
@@ -98,9 +100,21 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Pause"))
+        if (Input.GetButtonDown("Pause"))   
         {
             m_isPaused = !m_isPaused;
+        }
+
+        if (m_isPaused && m_shouldUnpause && m_unpauseTimer <= 0)
+        {
+            m_shouldUnpause = false;
+            m_isPaused = false;
+        }
+
+        if (m_shouldUnpause)
+        {
+            m_unpauseTimer -= Time.deltaTime;
+            m_unpauseTimer = Mathf.Max(m_unpauseTimer, 0.0f);
         }
 
         if (!m_isPaused)
@@ -166,7 +180,16 @@ public class LevelManager : MonoBehaviour
 
     public void SetPaused(bool p_status)
     {
-        m_isPaused = p_status;
+        if (p_status)
+        {
+            m_isPaused = true;
+            m_shouldUnpause = false;
+        }
+        else
+        {
+            m_shouldUnpause = true;
+            m_unpauseTimer = 0.1f;
+        }
     }
 
     void OnDestroy()
