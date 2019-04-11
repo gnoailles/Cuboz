@@ -23,8 +23,13 @@ public class LevelManager : MonoBehaviour
     private GameObject[]        m_spawnPoints;
     private ushort              m_validatedElementsCount = 0;
 
-    private float m_timer = 0.0f;
-    public bool m_isPaused = false;
+    private float m_levelTimer = 0.0f;
+    public float LevelTimer => m_levelTimer;
+    private bool m_isPaused = false;
+    public bool IsPaused => m_isPaused;
+
+    private static float m_totalTime;
+    public float TotalTime => m_totalTime;
 
     private static LevelManager m_instance;
     public  static LevelManager Instance
@@ -90,10 +95,13 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        m_isPaused = Input.GetButton("Pause");
+        if (Input.GetButton("Pause"))
+        {
+            m_isPaused = !m_isPaused;
+        }
 
         if (!m_isPaused)
-            m_timer += Time.deltaTime;
+            m_levelTimer += Time.deltaTime;
     }
 
     [ContextMenu("Update SpawnPoints")]
@@ -136,5 +144,10 @@ public class LevelManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    void OnDestroy()
+    {
+        m_totalTime += m_levelTimer;
     }
 }
