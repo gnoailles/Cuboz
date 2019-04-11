@@ -21,13 +21,13 @@ public class SelectOnInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_buttonSelected && Input.GetAxisRaw("VerticalDPad") != 0)
+        if (!m_buttonSelected && (Input.GetAxisRaw("VerticalDPad") != 0 || Input.GetAxisRaw("HorizontalDPad") != 0))
         {
             m_eventSystem.SetSelectedGameObject(m_selectedObject);
             m_buttonSelected = true;
         }
 
-        if (m_backButton != null && Input.GetButton("B"))
+        if (m_backButton != null && Input.GetButtonDown("B"))
             m_backButton.onClick.Invoke();
     }
 

@@ -32,7 +32,11 @@ public class PlayerHUD : MonoBehaviour
         else
         {
             if (Input.GetButtonDown("Pause"))
+            {
+                InputManager[] objs = FindObjectsOfType<InputManager>();
+                objs[0].isPaused = !m_pauseMenu.activeSelf;
                 m_pauseMenu.SetActive(!m_pauseMenu.activeSelf);
+            }
         }
     }
 }
