@@ -13,7 +13,7 @@ public class UnpauseOnClick : MonoBehaviour
         else
         {
             InputManager[] objs = FindObjectsOfType<InputManager>();
-            objs[0].isPaused = false;
+            objs[0].shouldUnpause = true;
         }
     }
 }

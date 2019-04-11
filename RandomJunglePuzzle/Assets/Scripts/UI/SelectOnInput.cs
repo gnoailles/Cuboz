@@ -10,7 +10,7 @@ public class SelectOnInput : MonoBehaviour
     [SerializeField] private GameObject m_selectedObject;
     [SerializeField] private Button m_backButton;
 
-    private bool m_buttonSelected;
+    private bool m_buttonSelected = false;
 
     // Use this for initialization
     void Start()
