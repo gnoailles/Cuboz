@@ -1,48 +1,34 @@
 fileFormatVersion: 2
-guid: ad0ddf4452be5db46b7c8e4e7ca6ce29
+guid: 67ce14f4111de0343bd70175eee444d2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Props_Brasero
-    100004: Props_Caisse
-    100006: Props_flaque
-    100008: Props_Nenuphar
-    100010: Props_Tente
-    100012: Props_Torche
-    400000: //RootNode
-    400002: Props_Brasero
-    400004: Props_Caisse
-    400006: Props_flaque
-    400008: Props_Nenuphar
-    400010: Props_Tente
-    400012: Props_Torche
+    100000: grpprop_finish
+    100002: prop_bassin
+    100004: prop_finish
+    100006: prop_flaque
+    100008: //RootNode
+    400000: grpprop_finish
+    400002: prop_bassin
+    400004: prop_finish
+    400006: prop_flaque
+    400008: //RootNode
     2100000: lambert1
-    2300000: Props_Brasero
-    2300002: Props_Caisse
-    2300004: Props_flaque
-    2300006: Props_Nenuphar
-    2300008: Props_Tente
-    2300010: Props_Torche
-    3300000: Props_Brasero
-    3300002: Props_Caisse
-    3300004: Props_flaque
-    3300006: Props_Nenuphar
-    3300008: Props_Tente
-    3300010: Props_Torche
-    4300000: Props_flaque
-    4300002: Props_Torche
-    4300004: Props_Brasero
-    4300006: Props_Tente
-    4300008: Props_Nenuphar
-    4300010: Props_Caisse
-    2186277476908879412: ImportLogs
+    2300000: prop_bassin
+    2300002: prop_finish
+    2300004: prop_flaque
+    3300000: prop_bassin
+    3300002: prop_finish
+    3300004: prop_flaque
+    4300000: prop_finish
+    4300002: prop_bassin
+    4300004: prop_flaque
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 57e6b2c12066a6b4f87d62ef5cd9a53a, type: 2}
+    second: {fileID: 2100000, guid: 97a9ab1a274957543971c847d6014f2a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
