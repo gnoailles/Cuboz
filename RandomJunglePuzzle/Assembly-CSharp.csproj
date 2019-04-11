@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameMode\GameManager.cs" />
     <Compile Include="Assets\Scripts\Inputs\Commands.cs" />
     <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
     <Compile Include="Assets\Scripts\Level\KillerElement.cs" />
@@ -68,6 +69,11 @@
     <Compile Include="Assets\Scripts\Level\StartZone.cs" />
     <Compile Include="Assets\Scripts\Level\ValidatingElement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayerHUD.cs" />
+    <Compile Include="Assets\Scripts\UI\QuitOnClick.cs" />
+    <Compile Include="Assets\Scripts\UI\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\UI\SelectOnInput.cs" />
+    <Compile Include="Assets\Scripts\UI\UnpauseOnClick.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/isart/Game_week_2019/RandomJunglePuzzle/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

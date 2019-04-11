@@ -8,9 +8,10 @@ public class InputManager : MonoBehaviour
     private const ushort                    m_movementCount         = 4;
 
     public  PlayerController                player                  = null;
+    public bool                             shouldUnpause           = false;
+    public bool                             isPaused                = false;
 
-
-    private float                           m_lastInputTime        = 0.0f;
+    private float                           m_lastInputTime         = 0.0f;
     private ushort                          m_axisCount             = 4;
     private ushort                          m_dualAxisCount         = 2;
     private bool[]                          m_isAxisDown;
@@ -20,6 +21,7 @@ public class InputManager : MonoBehaviour
                                                                                                         "LeftTrigger", "RightTrigger", 
                                                                                                         "A", "B", "X", "Y", 
                                                                                                         "LeftButton", "RightButton" });
+
 
     /// INPUT ID                |       COMMAND ID                          
     /// Axis                    |       Axis
@@ -175,7 +177,12 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Time.time - m_lastInputTime > player.inputCooldown)
+        if (isPaused && shouldUnpause)
+        {
+            shouldUnpause = false;
+            isPaused = false;
+        }
+        else if (Time.time - m_lastInputTime > player.inputCooldown && (LevelManager.Instance ? !LevelManager.Instance.IsPaused : !isPaused))
         {
             for (ushort inputID = 0; inputID < m_inputs.Count; ++inputID)
             {
