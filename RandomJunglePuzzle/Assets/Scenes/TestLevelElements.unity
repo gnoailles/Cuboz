@@ -1200,6 +1200,11 @@ PrefabInstance:
       propertyPath: m_nextStartZoneTimer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4569194627403914958, guid: 63cefce027c7e2a4e9a827808be3a617,
+        type: 3}
+      propertyPath: m_neededValidatingElements
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4569194627403914959, guid: 63cefce027c7e2a4e9a827808be3a617,
         type: 3}
       propertyPath: player
@@ -1360,7 +1365,7 @@ PrefabInstance:
     - target: {fileID: 8522763976497463108, guid: 8e5dc092f9fcdc642aaa88c8f6c21cfc,
         type: 3}
       propertyPath: m_restartAtSpawn
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8522763976497463113, guid: 8e5dc092f9fcdc642aaa88c8f6c21cfc,
         type: 3}

@@ -7,23 +7,23 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
-    private PlayerController    m_playerController      = null;
+    private PlayerController        m_playerController      = null;
     
-    private InputManager        m_inputManager          = null;
+    private InputManager            m_inputManager          = null;
     
     [SerializeField]
-    private string              m_nextLevel             = null;
+    private string                  m_nextLevel             = null;
     [SerializeField]
-    private float               m_nextStartZoneTimer    = 20.0f;
-
+    private float                   m_nextStartZoneTimer    = 20.0f;
+    
     [SerializeField]
-    private bool                m_randomizeInputs       = true;
+    private bool                    m_randomizeInputs       = true;
 
     [SerializeField] [Tooltip("Number of collectibles needed to finish level")]
-    private ushort              m_neededCollectibles    = 0;
+    private ushort                  m_neededValidatingElements    = 0;
 
-    private GameObject[]        m_spawnPoints;
-    private ushort              m_validatedElementsCount = 0;
+    private GameObject[]            m_spawnPoints;
+    private List<ValidatingElement> m_validatedElements = new List<ValidatingElement>();
 
     private static LevelManager m_instance;
     public  static LevelManager Instance
@@ -114,14 +114,23 @@ public class LevelManager : MonoBehaviour
         return m_spawnPoints[Random.Range(0, m_spawnPoints.Length)].transform.position;
     }
 
-    public void ValidateElement()
+    public void ValidateElement(ValidatingElement p_element)
     {
-        ++m_validatedElementsCount;
+        m_validatedElements.Add(p_element);
+    }
+
+    public void ResetValidatedElements()
+    {
+        foreach(ValidatingElement element in m_validatedElements)
+        {
+            element.Reset();
+        }
+        m_validatedElements.Clear();
     }
 
     public bool EndPointEntered()
     {
-        if(m_validatedElementsCount >= m_neededCollectibles)
+        if(m_validatedElements.Count >= m_neededValidatingElements)
         {
             StartZone.m_sceneToLoad = m_nextLevel;
             StartZone.duration      = m_nextStartZoneTimer;

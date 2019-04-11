@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         if(m_restartAtSpawn)
         {
             m_lastSafePosition = LevelManager.Instance.GetSpawnPos();
+            LevelManager.Instance.ResetValidatedElements();
         }
         m_positionBuffer = transform.position = m_lastSafePosition;
     }
