@@ -94,6 +94,12 @@ public class PlayerController : MonoBehaviour
         TryMove(Vector3.left * m_dashSize);
     }
 
+    public void Jump()
+    {
+        m_animator.Play("Jump");
+        inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
+    }
+
     public void Respawn(bool p_playDieAnim)
     {
         if(p_playDieAnim)

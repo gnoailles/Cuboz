@@ -82,3 +82,11 @@ public class LightSwitchCommand : ICommand
         }
     }
 }
+
+public class JumpCommand : ICommand
+{
+    void ICommand.Execute(PlayerController p_gridMovement)
+    {
+        p_gridMovement.Jump();
+    }
+}

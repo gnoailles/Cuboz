@@ -92,6 +92,7 @@ public class InputManager : MonoBehaviour
         m_commands.Add(9, new DashForwardCommand());
 
         m_commands.Add(10, new LightSwitchCommand());
+        m_commands.Add(11, new JumpCommand());
     }
 
     void Awake()
