@@ -187,8 +187,8 @@ public class LevelManager : MonoBehaviour
     public void LoadNextScene()
     {
         SceneManager.LoadScene("StartZone");
-        StartZone.sceneToLoad = m_nextLevel;
-        StartZone.duration = m_nextStartZoneTimer;
+        StartZone.m_sceneToLoad = m_nextLevel;
+        StartZone.m_duration = m_nextStartZoneTimer;
     }
 
     public void SetPaused(bool p_status)

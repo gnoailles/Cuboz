@@ -11,7 +11,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (m_useStartZone)
         {
-            StartZone.sceneToLoad = p_level;
+            StartZone.m_sceneToLoad = p_level;
             SceneManager.LoadScene("StartZone");
         }
         else
