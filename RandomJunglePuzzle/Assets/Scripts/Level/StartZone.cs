@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class StartZone : MonoBehaviour
 {
     static public string m_sceneToLoad = "TestLevelElements";
-    static public float     m_duration        = 30.0f;
+    static public float     m_duration        = 20.0f;
     
     private InputManager m_inputManager = null;
 
-    private float m_timer = 30.0f;
+    private float m_timer = 20.0f;
     public float Timer => m_timer;
 
     void Start()

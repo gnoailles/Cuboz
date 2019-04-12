@@ -186,9 +186,16 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene("StartZone");
-        StartZone.m_sceneToLoad = m_nextLevel;
-        StartZone.m_duration = m_nextStartZoneTimer;
+        if(SceneManager.GetActiveScene().name == "Level 10")
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        else
+        { 
+            SceneManager.LoadScene("StartZone");
+            StartZone.m_sceneToLoad = m_nextLevel;
+            StartZone.m_duration = m_nextStartZoneTimer;
+        }
     }
 
     public void SetPaused(bool p_status)
