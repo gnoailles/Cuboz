@@ -63,6 +63,12 @@
     <Compile Include="Assets\Shared\Ramps\Editor\RampAssetEditor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <None Include="Assets\Editor\PackageManagerAssembly\PackageImportList.txt" />
+    <Reference Include="Unity.ProGrids">
+      <HintPath>D:/isart/Game_week_2019/RandomJunglePuzzle/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>D:/isart/Game_week_2019/RandomJunglePuzzle/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/isart/Game_week_2019/RandomJunglePuzzle/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -80,12 +86,6 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/isart/Game_week_2019/RandomJunglePuzzle/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids">
-      <HintPath>D:/isart/Game_week_2019/RandomJunglePuzzle/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids.Editor">
-      <HintPath>D:/isart/Game_week_2019/RandomJunglePuzzle/RandomJunglePuzzle/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/software/2018.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
