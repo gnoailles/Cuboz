@@ -632,6 +632,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
+    <Compile Include="Assets\post_process.cs" />
     <Compile Include="Assets\Scripts\GameMode\GameManager.cs" />
     <Compile Include="Assets\Scripts\Inputs\Commands.cs" />
     <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
