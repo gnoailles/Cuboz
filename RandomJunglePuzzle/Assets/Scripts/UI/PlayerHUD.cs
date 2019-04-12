@@ -22,7 +22,7 @@ public class PlayerHUD : MonoBehaviour
 
     void Update()
     {
-        m_timerText.gameObject.SetActive(LevelManager.Instance);
+        m_timerText.gameObject.SetActive(true);
 
         if(LevelManager.Instance)
         { 
@@ -37,6 +37,9 @@ public class PlayerHUD : MonoBehaviour
                 objs[0].isPaused = !m_pauseMenu.activeSelf;
                 m_pauseMenu.SetActive(!m_pauseMenu.activeSelf);
             }
+
+            StartZone[] startZones = FindObjectsOfType<StartZone>();
+            m_timerText.text = startZones[0].Timer.ToString("F2");
         }
     }
 }

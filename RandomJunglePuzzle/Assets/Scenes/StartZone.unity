@@ -200,9 +200,10 @@ GameObject:
   - component: {fileID: 49258832}
   - component: {fileID: 49258834}
   - component: {fileID: 49258833}
+  - component: {fileID: 49258835}
   m_Layer: 0
   m_Name: bloc_edge_right (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,6 +267,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49258831}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &49258835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49258831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0.7478007, z: 1.0000002}
+  m_Center: {x: -0.0000010579824, y: -0.000000029802322, z: 0.0000017881393}
 --- !u!1 &56713086
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,9 +599,10 @@ GameObject:
   - component: {fileID: 98863204}
   - component: {fileID: 98863206}
   - component: {fileID: 98863205}
+  - component: {fileID: 98863207}
   m_Layer: 0
   m_Name: bloc_edge_right (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -651,6 +666,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98863203}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &98863207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98863203}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: -0.0000010579824, y: -0.000000029802322, z: -0.00000047683716}
 --- !u!1 &158554632
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,9 +767,10 @@ GameObject:
   - component: {fileID: 163314731}
   - component: {fileID: 163314733}
   - component: {fileID: 163314732}
+  - component: {fileID: 163314734}
   m_Layer: 0
   m_Name: bloc_edge_right (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -805,6 +834,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163314730}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &163314734
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163314730}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: 0.0000008493662, y: -0.000000029802322, z: 0.0000011920929}
 --- !u!1 &173013772
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,9 +858,10 @@ GameObject:
   - component: {fileID: 173013773}
   - component: {fileID: 173013775}
   - component: {fileID: 173013774}
+  - component: {fileID: 173013776}
   m_Layer: 0
   m_Name: bloc_edge_right (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -882,6 +925,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173013772}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &173013776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173013772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: -0.00000010430813, y: -0.000000029802322, z: -0.00000011920929}
 --- !u!1 &191740072
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,9 +1026,10 @@ GameObject:
   - component: {fileID: 261026008}
   - component: {fileID: 261026010}
   - component: {fileID: 261026009}
+  - component: {fileID: 261026011}
   m_Layer: 0
   m_Name: bloc_edge_right (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1036,6 +1093,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261026007}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &261026011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261026007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: -0.00000010430813, y: -0.000000029802322, z: -0.00000011920929}
 --- !u!1 &276813200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,9 +1194,10 @@ GameObject:
   - component: {fileID: 277926425}
   - component: {fileID: 277926427}
   - component: {fileID: 277926426}
+  - component: {fileID: 277926428}
   m_Layer: 0
   m_Name: bloc_obstacle (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1190,6 +1261,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277926424}
   m_Mesh: {fileID: 4300000, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &277926428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277926424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.00000016391277}
 --- !u!1 &303895368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,9 +1362,10 @@ GameObject:
   - component: {fileID: 306323682}
   - component: {fileID: 306323684}
   - component: {fileID: 306323683}
+  - component: {fileID: 306323685}
   m_Layer: 0
   m_Name: bloc_obstacle (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1344,6 +1429,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306323681}
   m_Mesh: {fileID: 4300000, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &306323685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306323681}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.00000016391277}
 --- !u!1 &306771635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,9 +2069,10 @@ GameObject:
   - component: {fileID: 451452707}
   - component: {fileID: 451452709}
   - component: {fileID: 451452708}
+  - component: {fileID: 451452710}
   m_Layer: 0
   m_Name: bloc_edge_right (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2037,6 +2136,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451452706}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &451452710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451452706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: -0.00000010430813, y: -0.000000029802322, z: -0.00000011920929}
 --- !u!1 &487809810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,9 +2237,10 @@ GameObject:
   - component: {fileID: 493276808}
   - component: {fileID: 493276810}
   - component: {fileID: 493276809}
+  - component: {fileID: 493276811}
   m_Layer: 0
   m_Name: bloc_obstacle (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2191,6 +2304,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493276807}
   m_Mesh: {fileID: 4300000, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &493276811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493276807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.00000016391277}
 --- !u!1 &504235578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,9 +2328,10 @@ GameObject:
   - component: {fileID: 504235579}
   - component: {fileID: 504235581}
   - component: {fileID: 504235580}
+  - component: {fileID: 504235582}
   m_Layer: 0
   m_Name: bloc_edge_right (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2268,6 +2395,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504235578}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &504235582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504235578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: 0.0000018030405, y: -0.000000029802322, z: 0.00000071525574}
 --- !u!1 &512219533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,9 +2419,10 @@ GameObject:
   - component: {fileID: 512219534}
   - component: {fileID: 512219536}
   - component: {fileID: 512219535}
+  - component: {fileID: 512219537}
   m_Layer: 0
   m_Name: bloc_edge_right (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2345,6 +2486,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512219533}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &512219537
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512219533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: 0.00000037252903, y: -0.000000029802322, z: 0.000000834465}
 --- !u!1 &517295921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,9 +2664,10 @@ GameObject:
   - component: {fileID: 526728637}
   - component: {fileID: 526728639}
   - component: {fileID: 526728638}
+  - component: {fileID: 526728640}
   m_Layer: 0
   m_Name: bloc_edge_right (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2576,6 +2731,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526728636}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &526728640
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526728636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0.7478007, z: 1.0000002}
+  m_Center: {x: -0.00000034272674, y: -0.000000029802322, z: 0.00000011920926}
 --- !u!1 &537531164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,9 +2986,10 @@ GameObject:
   - component: {fileID: 571673278}
   - component: {fileID: 571673280}
   - component: {fileID: 571673279}
+  - component: {fileID: 571673281}
   m_Layer: 0
   m_Name: bloc_edge_right (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2884,6 +3053,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571673277}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &571673281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571673277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: 0.00000037252903, y: -0.000000029802322, z: -0.00000035762787}
 --- !u!1 &585364659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,9 +3231,10 @@ GameObject:
   - component: {fileID: 618260526}
   - component: {fileID: 618260528}
   - component: {fileID: 618260527}
+  - component: {fileID: 618260529}
   m_Layer: 0
   m_Name: bloc_edge_right (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3115,6 +3298,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618260525}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &618260529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618260525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: 0.00000037252903, y: -0.000000029802322, z: -0.0000010728836}
 --- !u!1 &620804192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3690,7 +3886,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.32941177, g: 0.23137255, b: 0.19215687, a: 0}
+  m_BackGroundColor: {r: 0.14782842, g: 0.15040463, b: 0.20754719, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -4144,9 +4340,10 @@ GameObject:
   - component: {fileID: 778610369}
   - component: {fileID: 778610371}
   - component: {fileID: 778610370}
+  - component: {fileID: 778610372}
   m_Layer: 0
   m_Name: bloc_obstacle (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4210,6 +4407,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778610368}
   m_Mesh: {fileID: 4300000, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &778610372
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778610368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.00000016391277}
 --- !u!1 &780882406
 GameObject:
   m_ObjectHideFlags: 0
@@ -4535,9 +4745,10 @@ GameObject:
   - component: {fileID: 837911572}
   - component: {fileID: 837911574}
   - component: {fileID: 837911573}
+  - component: {fileID: 837911575}
   m_Layer: 0
   m_Name: bloc_obstacle (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4601,6 +4812,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837911571}
   m_Mesh: {fileID: 4300000, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &837911575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837911571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.00000016391277}
 --- !u!1001 &861229262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4651,7 +4875,7 @@ PrefabInstance:
     - target: {fileID: 1077172837522679902, guid: 1b2495c6cf1592f48b6d01acdb4d6eb0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1077172837522679902, guid: 1b2495c6cf1592f48b6d01acdb4d6eb0,
         type: 3}
@@ -4912,9 +5136,10 @@ GameObject:
   - component: {fileID: 959260778}
   - component: {fileID: 959260780}
   - component: {fileID: 959260779}
+  - component: {fileID: 959260781}
   m_Layer: 0
   m_Name: bloc_edge_right (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4978,6 +5203,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959260777}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &959260781
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959260777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: -0.00000010430813, y: -0.000000029802322, z: 0.0000017881393}
 --- !u!1 &960280049
 GameObject:
   m_ObjectHideFlags: 0
@@ -5022,7 +5260,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &972836483
 GameObject:
@@ -5574,9 +5812,10 @@ GameObject:
   - component: {fileID: 1066152117}
   - component: {fileID: 1066152119}
   - component: {fileID: 1066152118}
+  - component: {fileID: 1066152120}
   m_Layer: 0
   m_Name: bloc_obstacle (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5640,6 +5879,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066152116}
   m_Mesh: {fileID: 4300000, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1066152120
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066152116}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.00000016391277}
 --- !u!1 &1078226788
 GameObject:
   m_ObjectHideFlags: 0
@@ -5882,9 +6134,10 @@ GameObject:
   - component: {fileID: 1187655189}
   - component: {fileID: 1187655191}
   - component: {fileID: 1187655190}
+  - component: {fileID: 1187655192}
   m_Layer: 0
   m_Name: bloc_edge_right (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5948,113 +6201,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187655188}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
---- !u!1 &1227478405
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1227478410}
-  - component: {fileID: 1227478409}
-  - component: {fileID: 1227478408}
-  - component: {fileID: 1227478407}
-  - component: {fileID: 1227478406}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1227478406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227478405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecbc36549433544e90fc1544f696f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
-  m_xSize: 10
-  m_zSize: 10
---- !u!65 &1227478407
+--- !u!65 &1187655192
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227478405}
+  m_GameObject: {fileID: 1187655188}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1227478408
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227478405}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: c02fffddd747e4f4283bbc6b14b3e05d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1227478409
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227478405}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1227478410
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227478405}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -0.5, z: 5}
-  m_LocalScale: {x: 10, y: 1, z: 10}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000002, y: 0.7478007, z: 1.0000002}
+  m_Center: {x: -0.00000081956387, y: -0.000000029802322, z: 0.0000017881393}
 --- !u!1 &1227598226
 GameObject:
   m_ObjectHideFlags: 0
@@ -6143,9 +6302,10 @@ GameObject:
   - component: {fileID: 1227939698}
   - component: {fileID: 1227939700}
   - component: {fileID: 1227939699}
+  - component: {fileID: 1227939701}
   m_Layer: 0
   m_Name: bloc_edge_right (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6209,6 +6369,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227939697}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1227939701
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227939697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: -0.00000010430813, y: -0.000000029802322, z: 0.000000834465}
 --- !u!1 &1242489336
 GameObject:
   m_ObjectHideFlags: 0
@@ -6913,9 +7086,10 @@ GameObject:
   - component: {fileID: 1349498149}
   - component: {fileID: 1349498151}
   - component: {fileID: 1349498150}
+  - component: {fileID: 1349498152}
   m_Layer: 0
   m_Name: bloc_obstacle (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6979,6 +7153,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349498148}
   m_Mesh: {fileID: 4300000, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1349498152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349498148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.00000016391277}
 --- !u!1 &1379587319
 GameObject:
   m_ObjectHideFlags: 0
@@ -7298,9 +7485,10 @@ GameObject:
   - component: {fileID: 1510123987}
   - component: {fileID: 1510123989}
   - component: {fileID: 1510123988}
+  - component: {fileID: 1510123990}
   m_Layer: 0
   m_Name: bloc_edge_right (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7364,6 +7552,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510123986}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1510123990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510123986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: -0.0000005811453, y: -0.000000029802322, z: 0.000000834465}
 --- !u!1 &1513323117
 GameObject:
   m_ObjectHideFlags: 0
@@ -7375,9 +7576,10 @@ GameObject:
   - component: {fileID: 1513323118}
   - component: {fileID: 1513323120}
   - component: {fileID: 1513323119}
+  - component: {fileID: 1513323121}
   m_Layer: 0
   m_Name: bloc_edge_right (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7441,6 +7643,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513323117}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1513323121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513323117}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: -0.00000010430813, y: -0.000000029802322, z: -0.0000010728836}
 --- !u!1 &1514897390
 GameObject:
   m_ObjectHideFlags: 0
@@ -7452,9 +7667,10 @@ GameObject:
   - component: {fileID: 1514897391}
   - component: {fileID: 1514897393}
   - component: {fileID: 1514897392}
+  - component: {fileID: 1514897394}
   m_Layer: 0
   m_Name: bloc_edge_right (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7518,6 +7734,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514897390}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1514897394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514897390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: 0.0000008493662, y: -0.000000029802322, z: 0.0000009536743}
 --- !u!1 &1520039650
 GameObject:
   m_ObjectHideFlags: 0
@@ -7841,7 +8070,7 @@ PrefabInstance:
     - target: {fileID: 5643872653737919974, guid: 1d3547e35c252c8479a2ee2a49bf6fb0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5643872653737919970, guid: 1d3547e35c252c8479a2ee2a49bf6fb0,
         type: 3}
@@ -7881,7 +8110,7 @@ PrefabInstance:
     - target: {fileID: 5643872653737919970, guid: 1d3547e35c252c8479a2ee2a49bf6fb0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5643872653737919970, guid: 1d3547e35c252c8479a2ee2a49bf6fb0,
         type: 3}
@@ -7957,6 +8186,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643872654504448834, guid: 1d3547e35c252c8479a2ee2a49bf6fb0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0004272461
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643872654504448839, guid: 1d3547e35c252c8479a2ee2a49bf6fb0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d3547e35c252c8479a2ee2a49bf6fb0, type: 3}
@@ -8048,9 +8287,10 @@ GameObject:
   - component: {fileID: 1645505754}
   - component: {fileID: 1645505756}
   - component: {fileID: 1645505755}
+  - component: {fileID: 1645505757}
   m_Layer: 0
   m_Name: bloc_edge_right (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8114,6 +8354,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645505753}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1645505757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645505753}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0.7478007, z: 1.0000002}
+  m_Center: {x: -0.0000010579824, y: -0.000000029802322, z: 0.000000834465}
 --- !u!1 &1648982912
 GameObject:
   m_ObjectHideFlags: 0
@@ -8511,9 +8764,10 @@ GameObject:
   - component: {fileID: 1730235005}
   - component: {fileID: 1730235007}
   - component: {fileID: 1730235006}
+  - component: {fileID: 1730235008}
   m_Layer: 0
   m_Name: bloc_edge_right (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8577,6 +8831,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730235004}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1730235008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730235004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: -0.00000010430813, y: -0.000000029802322, z: -0.00000011920929}
 --- !u!1 &1772625627
 GameObject:
   m_ObjectHideFlags: 0
@@ -9050,9 +9317,10 @@ GameObject:
   - component: {fileID: 1815193801}
   - component: {fileID: 1815193803}
   - component: {fileID: 1815193802}
+  - component: {fileID: 1815193804}
   m_Layer: 0
   m_Name: bloc_edge_right (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9116,6 +9384,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815193800}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1815193804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815193800}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: 0.00000037252903, y: -0.000000029802322, z: -0.00000047683716}
 --- !u!1 &1840347426
 GameObject:
   m_ObjectHideFlags: 0
@@ -9281,9 +9562,10 @@ GameObject:
   - component: {fileID: 1853837897}
   - component: {fileID: 1853837899}
   - component: {fileID: 1853837898}
+  - component: {fileID: 1853837900}
   m_Layer: 0
   m_Name: bloc_edge_right (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9347,6 +9629,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853837896}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1853837900
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853837896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0.7478007, z: 1.0000002}
+  m_Center: {x: -0.00000010430816, y: -0.000000029802322, z: -2.842171e-14}
 --- !u!1 &1878229445
 GameObject:
   m_ObjectHideFlags: 0
@@ -9589,9 +9884,10 @@ GameObject:
   - component: {fileID: 1958991717}
   - component: {fileID: 1958991719}
   - component: {fileID: 1958991718}
+  - component: {fileID: 1958991720}
   m_Layer: 0
   m_Name: bloc_obstacle (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9655,6 +9951,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958991716}
   m_Mesh: {fileID: 4300000, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &1958991720
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958991716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.00000016391277}
 --- !u!1 &1959146196
 GameObject:
   m_ObjectHideFlags: 0
@@ -9664,6 +9973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959146197}
+  - component: {fileID: 1959146198}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -9689,8 +9999,20 @@ Transform:
   - {fileID: 3777219704626846599}
   - {fileID: 7407310616987126054}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1959146198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959146196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecbc36549433544e90fc1544f696f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1964652602
 GameObject:
   m_ObjectHideFlags: 0
@@ -10003,9 +10325,10 @@ GameObject:
   - component: {fileID: 2014123454}
   - component: {fileID: 2014123456}
   - component: {fileID: 2014123455}
+  - component: {fileID: 2014123457}
   m_Layer: 0
   m_Name: bloc_edge_right (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10069,6 +10392,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014123453}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &2014123457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014123453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: 0.00000037252903, y: -0.000000029802322, z: -0.00000011920929}
 --- !u!1 &2020786662
 GameObject:
   m_ObjectHideFlags: 0
@@ -10311,9 +10647,10 @@ GameObject:
   - component: {fileID: 2057953710}
   - component: {fileID: 2057953712}
   - component: {fileID: 2057953711}
+  - component: {fileID: 2057953713}
   m_Layer: 0
   m_Name: bloc_edge_right (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10377,6 +10714,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057953709}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &2057953713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057953709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0.7478007, z: 1.0000002}
+  m_Center: {x: -0.00000022351745, y: -0.000000029802322, z: -0.0000002384186}
 --- !u!1 &2068403463
 GameObject:
   m_ObjectHideFlags: 0
@@ -10542,9 +10892,10 @@ GameObject:
   - component: {fileID: 2089527559}
   - component: {fileID: 2089527561}
   - component: {fileID: 2089527560}
+  - component: {fileID: 2089527562}
   m_Layer: 0
   m_Name: bloc_edge_right (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10608,6 +10959,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089527558}
   m_Mesh: {fileID: 4300006, guid: cbb33d8a835488140b6e0bcb35ce0758, type: 3}
+--- !u!65 &2089527562
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089527558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.7478007, z: 1}
+  m_Center: {x: 0.00000037252903, y: -0.000000029802322, z: 0.000000834465}
 --- !u!1 &2103157418
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,6 +96,11 @@ public class LevelManager : MonoBehaviour
         {
             Instantiate(Resources.Load("HUD"));
         }
+
+        if(m_neededValidatingElements > m_validatedElements.Count)
+        {
+            StartCoroutine("RaiseFinish");
+        }
     }
 
     void Update()
@@ -150,6 +155,10 @@ public class LevelManager : MonoBehaviour
     public void ValidateElement(ValidatingElement p_element)
     {
         m_validatedElements.Add(p_element);
+        if (m_neededValidatingElements <= m_validatedElements.Count)
+        {
+            StartCoroutine("LowerFinish");
+        }
     }
 
     public void ResetValidatedElements()
@@ -159,6 +168,10 @@ public class LevelManager : MonoBehaviour
             element.Reset();
         }
         m_validatedElements.Clear();
+        if (m_neededValidatingElements > m_validatedElements.Count)
+        {
+           StartCoroutine("RaiseFinish");
+        }
     }
 
     public bool LevelComplete()
@@ -174,8 +187,8 @@ public class LevelManager : MonoBehaviour
     public void LoadNextScene()
     {
         SceneManager.LoadScene("StartZone");
-        StartZone.sceneToLoad = m_nextLevel;
-        StartZone.duration = m_nextStartZoneTimer;
+        StartZone.m_sceneToLoad = m_nextLevel;
+        StartZone.m_duration = m_nextStartZoneTimer;
     }
 
     public void SetPaused(bool p_status)
@@ -195,5 +208,35 @@ public class LevelManager : MonoBehaviour
     void OnDestroy()
     {
         m_totalTime += m_levelTimer;
+    }
+
+    IEnumerator LowerFinish()
+    {
+        float elapsedTime = 0;
+        GameObject finish = GameObject.FindGameObjectWithTag("Finish");
+        Vector3 pos = finish.transform.position;
+        float finalHeight = pos.y - 0.5f;
+        while (elapsedTime < 1.0f)
+        {
+            pos.y = Mathf.Lerp(pos.y, finalHeight, (elapsedTime / 1.0f));
+            finish.transform.position = pos;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    IEnumerator RaiseFinish()
+    {
+        float elapsedTime = 0;
+        GameObject finish = GameObject.FindGameObjectWithTag("Finish");
+        Vector3 pos = finish.transform.position;
+        float finalHeight = pos.y + 0.5f;
+        while (elapsedTime < 1.0f)
+        {
+            pos.y = Mathf.Lerp(pos.y, finalHeight, (elapsedTime / 1.0f));
+            finish.transform.position = pos;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 }
