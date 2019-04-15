@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: 8d672d7b0e83aad479787b834e728082
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bloc_HerbeA
+    100002: Bloc_HerbeB
+    100004: Bloc_HerbeB1
+    100006: Bloc_HerbeStoneA
+    100008: Bloc_HerbeStoneB
+    100010: Bloc_HerbeStoneC
+    100012: //RootNode
+    100014: Bloc_StoneA
+    100016: Bloc_StoneB
+    100018: Bloc_StoneB1
+    100020: Bloc_StoneC
+    100022: Bloc_StoneC2
+    100024: Bloc_Water
+    100026: Bloc_Water1
+    100028: Bloc_Water2
+    100030: grpBloc_herbe
+    100032: grpBloc_Stone
+    400000: Bloc_HerbeA
+    400002: Bloc_HerbeB
+    400004: Bloc_HerbeB1
+    400006: Bloc_HerbeStoneA
+    400008: Bloc_HerbeStoneB
+    400010: Bloc_HerbeStoneC
+    400012: //RootNode
+    400014: Bloc_StoneA
+    400016: Bloc_StoneB
+    400018: Bloc_StoneB1
+    400020: Bloc_StoneC
+    400022: Bloc_StoneC2
+    400024: Bloc_Water
+    400026: Bloc_Water1
+    400028: Bloc_Water2
+    400030: grpBloc_herbe
+    400032: grpBloc_Stone
+    2100000: lambert4
+    2100002: lambert1
+    2100004: Herbe
+    2100006: lambert3
+    2300000: Bloc_HerbeA
+    2300002: Bloc_HerbeB
+    2300004: Bloc_HerbeB1
+    2300006: Bloc_HerbeStoneA
+    2300008: Bloc_HerbeStoneB
+    2300010: Bloc_HerbeStoneC
+    2300012: Bloc_StoneA
+    2300014: Bloc_StoneB
+    2300016: Bloc_StoneB1
+    2300018: Bloc_StoneC
+    2300020: Bloc_StoneC2
+    2300022: Bloc_Water
+    2300024: Bloc_Water1
+    2300026: Bloc_Water2
+    3300000: Bloc_HerbeA
+    3300002: Bloc_HerbeB
+    3300004: Bloc_HerbeB1
+    3300006: Bloc_HerbeStoneA
+    3300008: Bloc_HerbeStoneB
+    3300010: Bloc_HerbeStoneC
+    3300012: Bloc_StoneA
+    3300014: Bloc_StoneB
+    3300016: Bloc_StoneB1
+    3300018: Bloc_StoneC
+    3300020: Bloc_StoneC2
+    3300022: Bloc_Water
+    3300024: Bloc_Water1
+    3300026: Bloc_Water2
+    4300000: Bloc_Water
+    4300002: Bloc_StoneA
+    4300004: Bloc_StoneC
+    4300006: Bloc_StoneB
+    4300008: Bloc_StoneB1
+    4300010: Bloc_StoneC2
+    4300012: Bloc_Water2
+    4300014: Bloc_Water1
+    4300016: Bloc_HerbeA
+    4300018: Bloc_HerbeB
+    4300020: Bloc_HerbeB1
+    4300022: Bloc_HerbeStoneA
+    4300024: Bloc_HerbeStoneB
+    4300026: Bloc_HerbeStoneC
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Herbe
+    second: {fileID: 2100000, guid: eba6b0e3a822e7549ae1d6fa40b8b09b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 9ffe61df20689fc40b736c60da547106, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: eba6b0e3a822e7549ae1d6fa40b8b09b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: d8fb446e3501cba43b6e11bc4d7acd60, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
