@@ -1929,7 +1929,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 322635674}
+      - m_Target: {fileID: 1030374071}
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:

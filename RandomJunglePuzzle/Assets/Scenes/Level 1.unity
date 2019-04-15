@@ -9516,7 +9516,7 @@ GameObject:
   - component: {fileID: 921741176}
   - component: {fileID: 918873942}
   - component: {fileID: 919971222}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Bloc_Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}

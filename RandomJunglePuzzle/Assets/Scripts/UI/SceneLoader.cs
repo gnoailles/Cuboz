@@ -9,9 +9,21 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene(string p_level)
     {
+        if(!p_level.Contains("Level"))
+        {
+            InputManager inputManager = FindObjectOfType<InputManager>();
+            if (inputManager)
+            {
+                inputManager.SetTestInputs();
+                Destroy(inputManager.gameObject);
+            }
+            PlayerHUD HUD = FindObjectOfType<PlayerHUD>();
+            if (HUD)
+                Destroy(HUD.gameObject);
+        }
         if (m_useStartZone)
         {
-            StartZone.m_sceneToLoad = p_level;
+            StartZone.sceneToLoad = p_level;
             SceneManager.LoadScene("StartZone");
         }
         else
