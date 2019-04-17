@@ -594,6 +594,9 @@ MonoBehaviour:
   inputCooldown: 0.1
   m_dashSize: 2
   m_restartAtSpawn: 0
+  m_transparentMaterial: {fileID: 2100000, guid: 841403604c895c54585fd7bb4968bf38,
+    type: 2}
+  m_defaultMaterial: {fileID: 2100000, guid: 635a88335c19d2045a414cfb8e66aa44, type: 2}
 --- !u!1 &1077172837522519166
 GameObject:
   m_ObjectHideFlags: 0

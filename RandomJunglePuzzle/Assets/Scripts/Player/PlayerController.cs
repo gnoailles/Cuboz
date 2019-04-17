@@ -6,9 +6,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public  float                   inputCooldown       = 0.1f;
-    [SerializeField] private ushort m_dashSize          = 2;
+    [SerializeField] 
+    private ushort m_dashSize          = 2;
 
-    [SerializeField] private bool   m_restartAtSpawn    = false;
+    [SerializeField] 
+    private bool                    m_restartAtSpawn        = false;
+    [SerializeField] 
+    private Material                m_defaultMaterial       = null;
+    [SerializeField] 
+    private Material                m_transparentMaterial   = null;
 
     private Vector3                 m_lastSafePosition;
     private Vector3                 m_positionBuffer;
@@ -30,9 +36,11 @@ public class PlayerController : MonoBehaviour
         }
 
         Renderer renderer = GetComponentInChildren<Renderer>();
-        Color color = renderer.material.color;
-        color.a = 1;
-        renderer.material.color = color;
+        renderer.material = m_defaultMaterial;
+
+        //Color color = renderer.material.color;
+        //color.a = 1;
+        //renderer.material.color = color;
 
         m_animator.Play("Spawn");
         inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
@@ -306,10 +314,11 @@ public class PlayerController : MonoBehaviour
     {
         StopAllCoroutines();
         Renderer renderer = GetComponentInChildren<Renderer>();
-        renderer.enabled = true;
-        Color color = renderer.material.color;
-        color.a = 1;
-        renderer.material.color = color;
+        renderer.material = m_defaultMaterial;
+        //renderer.enabled = true;
+        //Color color = renderer.material.color;
+        //color.a = 1;
+        //renderer.material.color = color;
         if (m_restartAtSpawn)
         {
             m_lastSafePosition = LevelManager.Instance.GetSpawnPos();
@@ -349,7 +358,9 @@ public class PlayerController : MonoBehaviour
         inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
         float elapsedTime = 0;
         Renderer renderer = GetComponentInChildren<Renderer>();
+        renderer.material = m_transparentMaterial;
         Color color = renderer.material.color;
+        color.a = 1;
         while (elapsedTime < inputCooldown)
         {
             color.a = Mathf.Lerp(color.a, 0, (elapsedTime / inputCooldown));
@@ -372,6 +383,7 @@ public class PlayerController : MonoBehaviour
         m_animator.Play("Respawn");
         inputCooldown += m_animator.GetCurrentAnimatorStateInfo(0).length;
         Renderer renderer = GetComponentInChildren<Renderer>();
+        renderer.material = m_defaultMaterial;
         renderer.enabled = true;
         yield return null;
     }
