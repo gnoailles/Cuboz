@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector3                 m_translation;
     private bool                    m_moveNextFrame     = false;
     private bool                    m_isOnFinish        = false;
+    private bool                    m_isOnSpikes        = false;
     private bool                    m_isFalling        = false;
 
     void Start()
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += m_translation;
             m_moveNextFrame = false;
-            if (!m_isFalling)
+            if (!m_isFalling && !m_isOnSpikes)
                 inputCooldown = 0;
         }
     }
@@ -112,6 +113,8 @@ public class PlayerController : MonoBehaviour
 
     private void TryMove(Vector3 p_direction)
     {
+        if(m_isFalling || m_isOnSpikes)
+            return;
         RaycastHit[] hits = Physics.RaycastAll(transform.position + new Vector3(0,0.5f,0), p_direction, p_direction.magnitude);
         if (hits.Length > 0)
         {
@@ -161,6 +164,8 @@ public class PlayerController : MonoBehaviour
                                 m_translation = p_direction.normalized;
                             }
                         }
+                        inputCooldown = 1000.0f;
+                        m_isOnSpikes = true;
                         break;
 
                     case "Finish":
@@ -320,6 +325,8 @@ public class PlayerController : MonoBehaviour
         inputCooldown = 0.0f; 
         if(m_isFalling)
             m_isFalling = false;
+        if(m_isOnSpikes)
+            m_isOnSpikes = false;
     }
 
 
