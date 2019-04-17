@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
             throw new UnassignedReferenceException("Missing animator!");
         }
 
+        Renderer renderer = GetComponentInChildren<Renderer>();
+        Color color = renderer.material.color;
+        color.a = 1;
+        renderer.material.color = color;
+
         m_animator.Play("Spawn");
         inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
     }
@@ -35,13 +40,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (transform.position.y <= -5.0f)
-            Respawn(false);
+            Respawn();
 
         if(m_moveNextFrame)
         {
             transform.position += m_translation;
             m_moveNextFrame = false;
-            if(!m_isFalling)
+            if (!m_isFalling)
                 inputCooldown = 0;
         }
     }
@@ -100,16 +105,9 @@ public class PlayerController : MonoBehaviour
         inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
     }
 
-    public void Respawn(bool p_playDieAnim)
+    public void Respawn()
     {
-        if(p_playDieAnim)
-        {
-            StartCoroutine("FadingDeath");
-        }
-        else
-        {
-            StartCoroutine("DelayedRespawn");
-        }
+        StartCoroutine("FadingDeath");
     }
 
     private void TryMove(Vector3 p_direction)
@@ -146,7 +144,6 @@ public class PlayerController : MonoBehaviour
                             m_animator.Play("DashB");
                             inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
                             m_translation = p_direction.normalized;
-                            //transform.Translate(p_direction.normalized);
                             blocked = true;
                         }
                         else
@@ -209,8 +206,7 @@ public class PlayerController : MonoBehaviour
                             if (hits.Length > 1 && hits[1].collider.tag == "Wall")
                             {
                                 m_animator.Play("DashBFall");
-                                inputCooldown = 5.0f;
-                                m_translation = p_direction.normalized;
+                                inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
                                 m_isFalling = true;
                                 blocked = true;
                             }
@@ -230,15 +226,13 @@ public class PlayerController : MonoBehaviour
                             if (p_direction.magnitude > 1)
                             {
                                 m_animator.Play("DashAFall");
-                                inputCooldown = 5.0f;
-                                m_translation = p_direction;
+                                inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
                                 m_isFalling = true;
                             }
                             else
                             {
                                 m_animator.Play("MoveFall");
-                                inputCooldown = 5.0f;
-                                m_translation = p_direction.normalized;
+                                inputCooldown = m_animator.GetCurrentAnimatorStateInfo(0).length;
                                 m_isFalling = true;
                             }
                             blocked = true;
@@ -282,7 +276,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (!m_restartAtSpawn)
+        if (!m_restartAtSpawn && !m_isFalling)
         {
             m_lastSafePosition = m_positionBuffer;
             m_positionBuffer = transform.position + m_translation;
@@ -307,6 +301,7 @@ public class PlayerController : MonoBehaviour
     {
         StopAllCoroutines();
         Renderer renderer = GetComponentInChildren<Renderer>();
+        renderer.enabled = true;
         Color color = renderer.material.color;
         color.a = 1;
         renderer.material.color = color;
@@ -322,7 +317,9 @@ public class PlayerController : MonoBehaviour
 
     public void RespawnAnimationEnded()
     {
-        inputCooldown = 0.0f;
+        inputCooldown = 0.0f; 
+        if(m_isFalling)
+            m_isFalling = false;
     }
 
 
@@ -335,10 +332,8 @@ public class PlayerController : MonoBehaviour
     public void FallAnimationEnded()
     {
         Renderer renderer = GetComponentInChildren<Renderer>();
-        Color color = renderer.material.color;
-        color.a = 0;
-        renderer.material.color = color;
-        m_moveNextFrame = true;
+        renderer.enabled = false;
+        StartCoroutine("DelayedRespawn");
     }
 
     IEnumerator FadingDeath()
@@ -355,25 +350,22 @@ public class PlayerController : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        renderer.enabled = false;
     }
 
     IEnumerator DelayedRespawn()
     {
         inputCooldown += 0.5f;
         yield return new WaitForSeconds(0.5f);
-        m_isFalling = false;
         if (m_restartAtSpawn)
         {
             m_lastSafePosition = LevelManager.Instance.GetSpawnPos();
             LevelManager.Instance.ResetValidatedElements();
         }
         m_animator.Play("Respawn");
-        m_positionBuffer = transform.position = m_lastSafePosition;
         inputCooldown += m_animator.GetCurrentAnimatorStateInfo(0).length;
         Renderer renderer = GetComponentInChildren<Renderer>();
-        Color color = renderer.material.color;
-        color.a = 1;
-        renderer.material.color = color;
+        renderer.enabled = true;
         yield return null;
     }
 }

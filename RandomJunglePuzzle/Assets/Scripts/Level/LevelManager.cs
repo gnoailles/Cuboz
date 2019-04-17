@@ -13,8 +13,6 @@ public class LevelManager : MonoBehaviour
     
     [SerializeField]
     private string                  m_nextLevel             = null;
-    [SerializeField]
-    private float                   m_nextStartZoneTimer    = 20.0f;
     
     [SerializeField]
     private bool                    m_randomizeInputs       = true;
@@ -194,7 +192,6 @@ public class LevelManager : MonoBehaviour
         { 
             SceneManager.LoadScene("StartZone");
             StartZone.sceneToLoad = m_nextLevel;
-            //StartZone.duration = m_nextStartZoneTimer;
         }
     }
 
