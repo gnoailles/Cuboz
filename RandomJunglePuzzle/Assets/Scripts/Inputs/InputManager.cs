@@ -253,5 +253,4 @@ public class InputManager : MonoBehaviour
             }
         }
     }
-
 }

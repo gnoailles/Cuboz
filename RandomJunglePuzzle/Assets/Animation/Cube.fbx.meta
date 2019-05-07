@@ -71,8 +71,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event FallAnimationEnded has a time (0.666667) outside
-      the clip's valid range (0.000000..0.666667). It will never be firedEvent RespawnAnimationEnded
+    animationImportWarnings: Event FallAnimationEnded has a time (0.633333) outside
+      the clip's valid range (0.000000..0.633333). It will never be firedEvent RespawnAnimationEnded
       has a time (0.833333) outside the clip's valid range (0.000000..0.833333). It
       will never be fired
     animationRetargetingWarnings: 
@@ -265,7 +265,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MoveFall
       takeName: Take 001
-      firstFrame: 190
+      firstFrame: 191
       lastFrame: 210
       wrapMode: 0
       orientationOffsetY: 0
@@ -300,7 +300,7 @@ ModelImporter:
     - serializedVersion: 16
       name: DashAFall
       takeName: Take 001
-      firstFrame: 220
+      firstFrame: 221
       lastFrame: 245
       wrapMode: 0
       orientationOffsetY: 0
