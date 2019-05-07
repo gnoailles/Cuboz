@@ -5,7 +5,7 @@ Cuboz is Game Week (4 gays game jam) project. The jam theme was "You know nothin
 The game has been made with Unity.
 
 ## Gameplay
-The gameplay is based on input randomizations. At the start of every level the player's inputs are re-randomized around all the gamepads buttons (apart from the joysticks)
+The gameplay is based on inputs randomization. At the start of every level the player's inputs are re-randomized around all the gamepad's buttons (apart from the joysticks)
 
 ![alt text](https://i.imgur.com/NwoNN5d.png "Gameplay Screenshot")
 
